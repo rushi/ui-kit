@@ -1,6 +1,10 @@
 module.exports = {
     stories: ["../src/**/*.stories.@(js|jsx|mdx)"],
 
+    core: {
+        builder: "webpack5",
+    },
+
     addons: [
         "@storybook/addon-postcss",
         "@storybook/addon-links",
