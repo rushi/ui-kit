@@ -296,10 +296,11 @@ addDescription(
 );
 
 export const WithUpcomingDates = () => {
-    const [value, setValue] = useState(new Date());
+    const [value, setValue] = useState(new Date("2022-06-01"));
 
     const handleChange = (value) => {
         setValue(value);
+        console.log("Changed to", value);
     };
 
     const modifiers = {
