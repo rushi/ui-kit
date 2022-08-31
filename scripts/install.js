@@ -3,7 +3,7 @@ const fs = require("fs");
 
 async function install() {
     console.log("\x1b[34mInstalling autoprefixer, postcss, tailwindcss and lodash\x1b[0m");
-    await execSync("npm install autoprefixer postcss tailwindcss lodash", { stdio: "inherit" });
+    await execSync("npm install --save autoprefixer postcss tailwindcss lodash", { stdio: "inherit" });
 
     await createFile("@xola/ui-kit/tailwind.config", "tailwind.config.js");
     await createFile("@xola/ui-kit/postcss.config", "postcss.config.js");
