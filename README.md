@@ -1,6 +1,6 @@
 ## Xola UI Kit
 
-React component library for the next generation of Xola apps. See a preview at https://ui.xola.io
+React component library using TailwindCSS for the next generation of Xola apps. See a preview at https://ui.xola.io
 
 ### Requirements
 
@@ -15,17 +15,10 @@ Install the UI kit:
 npm install @xola/ui-kit
 ```
 
-Install peer dependencies:
+Install peer dependencies & setup configuration:
 
 ```bash
-npm install autoprefixer postcss tailwindcss lodash
-```
-
-Create PostCSS and Tailwind config files:
-
-```bash
-echo 'module.exports = require("@xola/ui-kit/tailwind.config");' > tailwind.config.js
-echo 'module.exports = require("@xola/ui-kit/postcss.config");' > postcss.config.js
+node node_modules/@xola/ui-kit/scripts/initializePackage.js
 ```
 
 Import main CSS files in your project:
