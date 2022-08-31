@@ -25,7 +25,8 @@
         "lint:fix": "xola-lint src --fix",
         "lint:report": "xola-lint --reporter=json src > eslint_report.json && echo 'ESLint report saved to eslint_report.json'",
         "format": "prettier --write src",
-        "test": "xola-lint && jest"
+        "test": "xola-lint && jest",
+        "postinstall": "scripts/install.js"
     },
     "dependencies": {
         "@headlessui/react": "^1.4.0",
