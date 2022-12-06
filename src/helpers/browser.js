@@ -1,2 +1,2 @@
 /* global navigator */
-export const isOSX = navigator.userAgent.includes("Macintosh");
+export const isOSX = true; // navigator.userAgent.includes("Macintosh");
