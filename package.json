@@ -38,6 +38,7 @@
         "downshift": "^6.1.5",
         "get-user-locale": "^1.4.0",
         "google-libphonenumber": "^3.2.22",
+        "lodash.isplainobject": "^4.0.6",
         "nouislider-react": "^3.4.1",
         "prop-types": "^15.7.2",
         "react-day-picker": "^7.4.10",
