@@ -54,7 +54,7 @@ export const Button = ({
     size = "medium",
     icon,
     iconPlacement = "left",
-    className,
+    className = "",
     children,
     ...rest
 }) => {

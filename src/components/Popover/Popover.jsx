@@ -8,7 +8,7 @@ import "tippy.js/dist/tippy.css";
 import { getChildrenByType } from "../../helpers/children";
 import styles from "./Popover.module.css";
 
-export const Popover = ({ className, children, skidding = 0, distance = 10, ...rest }) => {
+export const Popover = ({ className = "", children, skidding = 0, distance = 10, ...rest }) => {
     const content = getChildrenByType(children, Popover.Content);
     const target = Children.toArray(children).filter((child) => child.type !== Popover.Content);
 
@@ -34,7 +34,7 @@ Popover.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-const Content = ({ className, children }) => {
+const Content = ({ className = "", children }) => {
     return <div className={clsx("ui-popover-content", className)}>{children}</div>;
 };
 

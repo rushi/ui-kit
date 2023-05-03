@@ -10,7 +10,7 @@ export const SidebarAccount = ({
     image,
     icon = <ChevronRightIcon />,
     isResponsive = false,
-    className,
+    className = "",
     ...rest
 }) => {
     const accountImage = image ?? <Avatar size="tiny" name={name} />;

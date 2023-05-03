@@ -16,7 +16,7 @@ const colors = {
 
 const CurrencyContext = createContext();
 
-export const Breakdown = ({ children, className, currency, ...rest }) => {
+export const Breakdown = ({ children, className = "", currency, ...rest }) => {
     return (
         <CurrencyContext.Provider value={currency}>
             <table className={clsx("ui-breakdown", "w-full", className)} {...rest}>
@@ -32,7 +32,16 @@ Breakdown.propTypes = {
     currency: PropTypes.string.isRequired,
 };
 
-const BreakdownItem = ({ children, info, methodIcon, secondary, value, className, color = "default", ...rest }) => {
+const BreakdownItem = ({
+    children,
+    info,
+    methodIcon,
+    secondary,
+    value,
+    className = "",
+    color = "default",
+    ...rest
+}) => {
     const currency = useContext(CurrencyContext);
 
     return (
@@ -70,7 +79,7 @@ BreakdownItem.propTypes = {
 Breakdown.Item = BreakdownItem;
 Breakdown.Item.displayName = "Breakdown.Item";
 
-const BreakdownSubtotalItem = ({ children, info, value, className, color = "black", ...rest }) => {
+const BreakdownSubtotalItem = ({ children, info, value, className = "", color = "black", ...rest }) => {
     const currency = useContext(CurrencyContext);
 
     return (
@@ -98,7 +107,7 @@ BreakdownSubtotalItem.propTypes = {
 Breakdown.SubtotalItem = BreakdownSubtotalItem;
 Breakdown.SubtotalItem.displayName = "Breakdown.SubtotalItem";
 
-const BreakdownSeparator = ({ className, ...rest }) => {
+const BreakdownSeparator = ({ className = "", ...rest }) => {
     return (
         <tr className={clsx("ui-breakdown-separator", className)} {...rest}>
             <td colSpan={3} className="border-b border-gray-light pb-1" />

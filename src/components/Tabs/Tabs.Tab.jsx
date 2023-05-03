@@ -19,7 +19,7 @@ const variants = {
 export const Tab = ({
     variant = "default",
     as: Tag = "button",
-    className,
+    className = "",
     isActive = false,
     isHidden = false,
     ...rest

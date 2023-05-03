@@ -2,7 +2,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
-export const Counter = ({ className, ...rest }) => {
+export const Counter = ({ className = "", ...rest }) => {
     return (
         <span
             className={clsx(

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React, { Children } from "react";
 import { Popover } from "./Popover";
 
-export const PopoverList = ({ placement = "bottom", className, children, ...rest }) => {
+export const PopoverList = ({ placement = "bottom", className = "", children, ...rest }) => {
     const childrenArray = Children.toArray(children);
     const innerContent = childrenArray.filter((child) => child.type !== PopoverList.Item);
     const totalItems = childrenArray.length - innerContent.length;
@@ -35,7 +35,7 @@ PopoverList.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-const Item = ({ name, isActive = false, position, total, children, className, onClickItem, ...rest }) => {
+const Item = ({ name, isActive = false, position, total, children, className = "", onClickItem, ...rest }) => {
     const onClick = (event) => onClickItem(event, name);
 
     return (

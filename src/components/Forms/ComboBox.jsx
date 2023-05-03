@@ -6,7 +6,7 @@ import CreatableSelect from "react-select/creatable";
 import "./ComboBox.css";
 
 // TODO: Common parameters should be defined in stories like `options` and `defaultValue`
-export const ComboBox = ({ isCreatable = false, className, isError, ...rest }) => {
+export const ComboBox = ({ isCreatable = false, className = "", isError, ...rest }) => {
     const SelectType = isCreatable ? CreatableSelect : Select;
     return (
         <SelectType

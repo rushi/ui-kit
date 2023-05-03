@@ -9,7 +9,7 @@ export const FadeIn = ({
     enter = "transition-opacity duration-700",
     enterFrom = "opacity-0",
     enterTo = "opacity-100",
-    className,
+    className = "",
     children,
     ...rest
 }) => {

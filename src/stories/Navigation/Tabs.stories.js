@@ -34,7 +34,7 @@ const TabsStories = {
     },
 };
 
-export const Default = ({ className, variant }) => {
+export const Default = ({ className = "", variant }) => {
     const [activeTab, setActiveTab] = useState(0);
 
     return (

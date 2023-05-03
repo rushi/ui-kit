@@ -22,7 +22,7 @@ HeaderToolbar.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-HeaderToolbar.Breadcrumb = ({ className, children }) => {
+HeaderToolbar.Breadcrumb = ({ className = "", children }) => {
     return (
         <Breadcrumb
             className={clsx(

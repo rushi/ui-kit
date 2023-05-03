@@ -19,7 +19,7 @@ import "./RangeSlider.css";
  * @param {Function?}   props.onChange                  Debounced callback when range slider is changed.
  */
 export const RangeSlider = ({
-    className,
+    className = "",
     values,
     min,
     max,

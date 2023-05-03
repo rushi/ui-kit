@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { isOSX } from "../helpers/browser";
 
-export const Key = ({ char, className, ...rest }) => {
+export const Key = ({ char, className = "", ...rest }) => {
     const key = keyMap[char] ?? char;
 
     return (

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { BaseInput } from "./BaseInput";
 
-export const Textarea = ({ className, rows = 2, ...rest }) => {
+export const Textarea = ({ className = "", rows = 2, ...rest }) => {
     return <BaseInput as="textarea" className={clsx("ui-textarea", className)} rows={rows} {...rest} />;
 };
 

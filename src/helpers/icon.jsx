@@ -4,7 +4,7 @@ import React from "react";
 import { iconSizes } from "../icons/iconSizes";
 
 export const createIcon = (Icon) => {
-    const IconContainer = ({ size = "small", className, ...rest }) => {
+    const IconContainer = ({ size = "small", className = "", ...rest }) => {
         return <Icon className={clsx(iconSizes[size], "relative -top-0.25 inline-block", className)} {...rest} />;
     };
 

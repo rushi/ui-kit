@@ -51,7 +51,7 @@ Switch.propTypes = {
     size: PropTypes.string,
 };
 
-Switch.Group = ({ className, children }) => {
+Switch.Group = ({ className = "", children }) => {
     return (
         <HeadlessSwitch.Group as="div" className={clsx("ui-switch-group", "inline-flex items-center", className)}>
             {children}
@@ -66,7 +66,7 @@ Switch.Group.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-Switch.Label = ({ direction = "left", className, children }) => {
+Switch.Label = ({ direction = "left", className = "", children }) => {
     return (
         <HeadlessSwitch.Label
             as="span"

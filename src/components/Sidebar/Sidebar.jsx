@@ -18,7 +18,7 @@ const LeftDrawerCountStyle = {
     background: "linear-gradient(138.65deg, #583DFF 19.59%, #F849C7 62.96%, #FFC03D 97.07%)",
 };
 
-export const Sidebar = ({ logo, children, className, footer, notifications, isFixed = true, onLogoClick }) => {
+export const Sidebar = ({ logo, children, className = "", footer, notifications, isFixed = true, onLogoClick }) => {
     const [isLeftDrawerOpen, setIsLeftDrawerOpen] = useState(false);
     const [isRightDrawerOpen, setIsRightDrawerOpen] = useState(false);
 

@@ -6,7 +6,7 @@ import clsx from "clsx";
 const PNF = phoneLib.PhoneNumberFormat;
 const phoneUtil = phoneLib.PhoneNumberUtil.getInstance();
 
-export const Phone = ({ countryCode = "US", className, children }) => {
+export const Phone = ({ countryCode = "US", className = "", children }) => {
     const number = children;
 
     try {

@@ -14,7 +14,7 @@ const loadingColors = {
     danger: "!bg-danger-light",
 };
 
-export const SubmitButton = ({ color = "primary", isLoading, className, children, ...rest }) => {
+export const SubmitButton = ({ color = "primary", isLoading, className = "", children, ...rest }) => {
     return (
         <Button
             color={color}

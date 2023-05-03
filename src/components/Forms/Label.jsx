@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React from "react";
 import PropTypes from "prop-types";
 
-export const Label = ({ isDisabled = false, className, ...rest }) => {
+export const Label = ({ isDisabled = false, className = "", ...rest }) => {
     return (
         <label
             className={clsx(

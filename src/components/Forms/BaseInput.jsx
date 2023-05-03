@@ -9,7 +9,7 @@ const sizes = {
     large: "px-5 py-3.5 text-md leading-md", // 50px
 };
 
-export const BaseInput = ({ as: Tag, size = "medium", isError, className, isRequired, ...rest }) => {
+export const BaseInput = ({ as: Tag, size = "medium", isError, className = "", isRequired, ...rest }) => {
     return (
         <div className="relative flex w-full items-center">
             <Tag

@@ -94,7 +94,7 @@ DatePickerPopover.propTypes = {
     children: PropTypes.node,
 };
 
-const DefaultInput = forwardRef(({ className, ...rest }, reference) => {
+const DefaultInput = forwardRef(({ className = "", ...rest }, reference) => {
     return (
         <div ref={reference} className="relative flex bg-gray-lighter">
             <div className="pointer-events-none absolute inset-0 flex items-center pl-3">

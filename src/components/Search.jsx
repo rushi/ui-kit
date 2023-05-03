@@ -26,7 +26,7 @@ const callDebounced = debounce((function_, value) => function_(value), 500);
  * @param {boolean?}    props.shouldDestroyOnClose  Control if the menu should be hidden on destroyed when closed.
  */
 export const Search = ({
-    className,
+    className = "",
     items = [],
     defaultValue,
     onChange,
