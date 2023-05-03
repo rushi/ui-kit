@@ -145,7 +145,7 @@ $ npm install some-package --legacy-peer-deps
 
 ## Publishing
 
-Install the [np](https://www.npmjs.com/package/np) library using `npm install -g np`. Then run this to publish:
+Install the [np](https://github.com/sindresorhus/np#readme) library using `npm install -g np`. Then run this to publish:
 
 ```bash
 npm run publish

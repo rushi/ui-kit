@@ -28,7 +28,8 @@
         "build:storybook": "npm run prebuild && build-storybook",
         "chromatic": "chromatic --exit-zero-on-changes --build-script-name build:storybook",
         "prepublish": "npm run build",
-        "publish": "np --no-tests --any-branch"
+        "publish": "np --no-tests --any-branch",
+        "postpublish": "echo \\\\\\033[32mPlease run \\\"git push upstream --tags\\\" to push your tags to Github\\"
     },
     "dependencies": {
         "@headlessui/react": "^1.4.0",
