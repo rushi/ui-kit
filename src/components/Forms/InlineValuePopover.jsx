@@ -3,14 +3,15 @@ import React, { useRef } from "react";
 import { DownArrowIcon } from "../..";
 import { Popover } from "../Popover/Popover";
 import { ValuePopoverText } from "./ValuePopoverText";
+import { noop } from "lodash";
 
 export const InlineValuePopover = ({
     text,
     isOpen = false,
     showArrow = true,
-    onClick,
-    onClickOutside,
-    classNames,
+    onClick = noop,
+    onClickOutside = noop,
+    classNames = {},
     children,
     error = null,
     ...rest
