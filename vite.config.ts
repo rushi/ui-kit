@@ -9,13 +9,13 @@ const dependencies = Object.keys(pkg.dependencies);
 const devDependencies = Object.keys(pkg.devDependencies);
 
 export default defineConfig({
-    plugins: [react(), dts({ include: ["src"] })],
+    plugins: [dts({ rollupTypes: true, copyDtsFiles: true })],
     build: {
         copyPublicDir: false,
         outDir: "build",
 
         lib: {
-            entry: resolve(__dirname, "src/index.js"),
+            entry: resolve(__dirname, "src/index.ts"),
             name: "XolaUIKit",
         },
 

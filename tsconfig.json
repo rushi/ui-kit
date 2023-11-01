@@ -18,18 +18,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
-    "types": [
-      "vite/client",
-      "node"
-    ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+    "jsx": "react-jsx"
   },
   "include": [
     "./src"
+  ],
+  "exclude": [
+    "./src/stories"
   ]
 }
