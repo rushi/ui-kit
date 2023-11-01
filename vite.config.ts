@@ -9,7 +9,7 @@ const dependencies = Object.keys(pkg.dependencies);
 const devDependencies = Object.keys(pkg.devDependencies);
 
 export default defineConfig({
-    plugins: [react(), dts({ rollupTypes: true, copyDtsFiles: true })],
+    plugins: [react(), dts({ copyDtsFiles: true })],
     build: {
         copyPublicDir: false,
         outDir: "build",
