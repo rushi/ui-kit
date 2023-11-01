@@ -4,12 +4,7 @@
     "description": "Xola UI Kit",
     "license": "MIT",
     "files": [
-        "build",
-        "src/index.css",
-        "index.d.ts",
-        "tailwind.config.js",
-        "tailwind.config.mjs",
-        "postcss.config.js"
+        "build"
     ],
     "main": "build/ui-kit.umd.js",
     "module": "build/ui-kit.mjs",
