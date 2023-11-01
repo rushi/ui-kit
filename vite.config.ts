@@ -1,12 +1,16 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import dts from "vite-plugin-dts";
 import pkg from "./package.json";
 
 const dependencies = Object.keys(pkg.dependencies);
 const devDependencies = Object.keys(pkg.devDependencies);
 
 export default defineConfig({
+    plugins: [react(), dts({ include: ["src"] })],
     build: {
+        copyPublicDir: false,
         outDir: "build",
 
         lib: {
