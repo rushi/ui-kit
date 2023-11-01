@@ -1,9 +1,8 @@
 import { range } from "lodash";
-import PropTypes from "prop-types";
-import React from "react";
 import { Dot } from "./Dot";
+import React from "react";
 
-export const DotProgress = ({ current, total }) => {
+export const DotProgress = ({ current, total }: { current: number; total: number }) => {
     if (total <= 1) {
         return null;
     }
@@ -17,9 +16,4 @@ export const DotProgress = ({ current, total }) => {
             })}
         </div>
     );
-};
-
-DotProgress.propTypes = {
-    total: PropTypes.number.isRequired,
-    current: PropTypes.number.isRequired,
 };

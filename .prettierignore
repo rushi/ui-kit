@@ -1,4 +1,6 @@
 src/theme.js
+build
+dist
 package-lock.json
 node_modules
 .github

@@ -1,4 +1,4 @@
-import path from "path";
+import { resolve } from "path";
 import { defineConfig } from "vite";
 import pkg from "./package.json";
 
@@ -10,7 +10,7 @@ export default defineConfig({
         outDir: "build",
 
         lib: {
-            entry: path.resolve(__dirname, "src/index.js"),
+            entry: resolve(__dirname, "src/index.js"),
             name: "XolaUIKit",
         },
 

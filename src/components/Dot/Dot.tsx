@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import PropTypes from "prop-types";
 import React from "react";
 
 const colors = {
@@ -17,16 +16,17 @@ const sizes = {
     large: "h-2 w-2",
 };
 
-export const Dot = ({ color = "primary", size = "medium", className, ...rest }) => {
+interface DotProps {
+    color: keyof typeof colors;
+    size: keyof typeof sizes;
+    className?: string;
+}
+
+export const Dot = ({ color = "primary", size = "medium", className, ...rest }: DotProps) => {
     return (
         <span
             className={clsx("ui-dot", "inline-block rounded-full text-white", colors[color], sizes[size], className)}
             {...rest}
         />
     );
-};
-
-Dot.propTypes = {
-    className: PropTypes.string,
-    color: PropTypes.oneOf(Object.keys(colors)),
 };

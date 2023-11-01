@@ -24,7 +24,7 @@
         "lint:fix": "xola-lint src --ignore src/stories --fix=true",
         "lint:report": "xola-lint --reporter=json src > eslint_report.json",
         "test": "jest",
-        "build": "npm run prepare && vite build",
+        "build": "npm run prepare && npx tsc && vite build",
         "build:storybook": "npm run prepare && storybook build"
     },
     "dependencies": {
