@@ -17,8 +17,7 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,
-    "outDir": "dist",
+    "noEmit": true,
     "jsx": "react",
     "types": [
       "vite/client",

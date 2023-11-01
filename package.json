@@ -5,7 +5,7 @@
     "license": "MIT",
     "files": [
         "build",
-        "index.css",
+        "src/index.css",
         "index.d.ts",
         "tailwind.config.js",
         "tailwind.config.mjs",

@@ -1,7 +1,6 @@
 import type { Preview } from "@storybook/react";
-import React from "react";
 
-import "../index.css";
+import "../src/index.css";
 import xola from "./xola";
 
 const preview: Preview = {
