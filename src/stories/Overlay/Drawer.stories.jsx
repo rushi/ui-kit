@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Button, Drawer } from "../..";
+import { inlineRadio } from "../helpers";
+import { sizes } from "../../components/Drawer";
 
 const DrawerStories = {
     title: "Overlay/Drawers",
@@ -16,12 +18,13 @@ const DrawerStories = {
             url: "https://www.figma.com/file/YCbs6YcoYUNYGq9VhrEFQ0/13-Admin?node-id=960%3A27700&viewport=1028%2C673%2C0.38",
         },
     },
+    args: {
+        isOpen: false,
+        size: "medium",
+        title: "Hello World",
+        content: "Lorem Ipsum. Click the X to close",
+    },
     argTypes: {
-        isOpen: {
-            description: "Open or close the sidebar",
-            type: { required: true },
-            control: { type: "boolean" },
-        },
         title: {
             description: "The title of the Drawer",
             type: { required: true },
@@ -31,11 +34,7 @@ const DrawerStories = {
             description: "The body of the Drawer",
             control: { type: "text" },
         },
-        size: {
-            description: "The width of the drawer when it opens",
-            options: ["small", "medium", "large"],
-            control: { type: "select" },
-        },
+        size: inlineRadio(Object.keys(sizes).slice(0, -1)),
         onClose: {
             description: "Function to callback to close the Drawer",
             control: { type: "function" },
@@ -43,8 +42,8 @@ const DrawerStories = {
     },
 };
 
-export const Drawers = ({ title = "Hello World", size, content = "Lorem Ipsum. Click the X to close" }) => {
-    const [open, setOpen] = useState(false);
+export const Default = ({ isOpen, size, title, content }) => {
+    const [open, setOpen] = useState(isOpen);
     const onClose = () => setOpen(false);
 
     return (

@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
 import { Switch } from "../..";
+import { sizeParams } from "../helpers";
 
 const SwitchStories = {
     primary: true,
     title: "Forms & Fields/Switch",
+    tags: ["autodocs"],
     parameters: {
+        controls: { expanded: false },
         docs: {
             description: {
                 component: "This is a toggle for situations where you require a better looking boolean form component",
@@ -21,19 +24,11 @@ const SwitchStories = {
         size: "medium",
     },
     argTypes: {
-        size: {
-            description: "Switch Size",
-            table: {
-                type: { summary: null },
-                defaultValue: { summary: "medium" },
-            },
-            options: ["small", "medium", "large"],
-            control: { type: "radio" },
-        },
+        size: sizeParams,
     },
 };
 
-export const Default = ({ size }) => {
+export const Default = ({ size = "a" }) => {
     const [checked, setChecked] = useState(false);
     return <Switch isChecked={checked} size={size} onChange={setChecked} />;
 };

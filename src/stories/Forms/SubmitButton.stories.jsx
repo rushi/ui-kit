@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { SubmitButton } from "../..";
+import { sizeParams } from "../helpers";
 
 const SubmitButtonStories = {
-    title: "Forms & Fields/Buttons/Submit Button",
+    title: "Forms & Fields/Submit Button",
     component: SubmitButton,
+    tags: ["autodocs"],
     args: {
         isLoading: false,
         size: "medium",
@@ -16,13 +18,7 @@ const SubmitButtonStories = {
                 defaultValue: { summary: false },
             },
         },
-        size: {
-            options: ["small", "medium", "large"],
-            control: { type: "radio" },
-            table: {
-                defaultValue: { summary: "medium" },
-            },
-        },
+        size: sizeParams,
         color: {
             options: ["primary", "secondary", "success", "warning", "danger"],
             control: { type: "select" },

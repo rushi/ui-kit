@@ -1,6 +1,8 @@
 import React from "react";
 import { Toaster } from "react-hot-toast";
 import { Button, flash } from "../..";
+import { inlineRadio, select, sizeParams } from "../helpers";
+import { colors } from "../../helpers/flash";
 
 const FlashStories = {
     title: "Data Display/Flash",
@@ -11,6 +13,7 @@ const FlashStories = {
             },
         },
     },
+    tags: ["autodocs"],
     args: {
         text: "Your booking was successfully created",
         size: "medium",
@@ -24,20 +27,8 @@ const FlashStories = {
             description: "The text in the component. For **demo** only",
             control: { type: "text" },
         },
-        size: {
-            options: ["small", "medium", "large"],
-            control: { type: "inline-radio" },
-            table: {
-                defaultValue: { summary: "medium" },
-            },
-        },
-        color: {
-            options: ["primary", "secondary", "success", "warning", "danger", "caution"],
-            control: { type: "inline-radio" },
-            table: {
-                defaultValue: { summary: "primary" },
-            },
-        },
+        size: sizeParams,
+        color: select(Object.keys(colors)),
         duration: {
             type: { required: false },
             description: "Time in `ms`",
@@ -59,19 +50,18 @@ const toastMe = (props) => {
 
 export const Default = {
     render: (props) => {
+        const { duration, color = "primary", text } = props;
         return (
             <div className="space-y-6">
                 <div>Click below to show a flash</div>
-                <Button onClick={() => toastMe(props)}>{props.text}</Button>
+                <Button onClick={() => toastMe(props)}>{text}</Button>
 
                 <pre>
-                    <code>{`flash.show({ text: "${props.text}", color: "${props.color ?? "primary"}", duration: ${
-                        props.duration
-                    } })`}</code>
+                    <code>{`flash.show({ text: "${text}", color: "${color}", duration: ${duration} })`}</code>
                 </pre>
 
                 <div>
-                    <Button size="small" color="warning" onClick={() => flash.dismiss()}>
+                    <Button size="small" variant="outline" color="secondary" onClick={() => flash.dismiss()}>
                         Dismiss All
                     </Button>
                 </div>
@@ -84,7 +74,7 @@ export const Default = {
 };
 
 export const AllStyles = {
-    render: (props) => {
+    render: ({ size, text, canClose }) => {
         const handleClose = () => {
             console.log("Closed");
         };
@@ -92,8 +82,8 @@ export const AllStyles = {
         return (
             <div className="w-96 space-y-8">
                 {FlashStories.argTypes.color.options.map((color) => {
-                    const classes = flash.getStyles(color, props.size, "relative", true);
-                    return flash.container(`[${color}] ${props.text}`, classes, props.canClose ? handleClose : null, {
+                    const classes = flash.getStyles(color, size, "relative", true);
+                    return flash.container(`[${color}] ${text}`, classes, canClose ? handleClose : null, {
                         id: `flash-${color}`,
                         visible: true,
                     });

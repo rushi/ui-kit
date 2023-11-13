@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Button, Input, Modal } from "../..";
+import { inlineRadio, tableDefault } from "../helpers";
+import { sizes } from "../../components/Modal";
 
 const ModalStories = {
     title: "Overlay/Modal",
     component: Modal,
+    tags: ["autodocs"],
     args: {
         size: "medium",
         position: "center",
@@ -18,14 +21,7 @@ const ModalStories = {
         },
     },
     argTypes: {
-        size: {
-            type: { required: false },
-            options: ["small", "medium", "large", "huge"],
-            control: { type: "select" },
-            table: {
-                defaultValue: { summary: "medium" },
-            },
-        },
+        size: inlineRadio(Object.keys(sizes), tableDefault("medium")),
         position: {
             type: { required: false },
             options: ["topLeft", "topRight", "center", "bottomLeft", "bottomRight"],

@@ -1,14 +1,11 @@
-import React from "react";
 import { Tag } from "../..";
+import { select, sizeParams } from "../helpers";
+import { colors } from "../../components/Tag";
 
 const TagStories = {
     title: "Data Display/Tag",
     component: Tag,
-    args: {
-        color: "primary",
-        size: "medium",
-        text: "Listing: Kayaking in the Ganges",
-    },
+    tags: ["autodocs"],
     parameters: {
         design: {
             name: "Figma",
@@ -21,43 +18,35 @@ const TagStories = {
             type: { required: true },
             control: { type: "text" },
         },
-        color: {
-            options: ["primary", "secondary"],
-            control: { type: "select" },
-        },
-        size: {
-            options: ["small", "medium", "large"],
-            control: { type: "radio" },
-        },
+        color: select(Object.keys(colors)),
+        size: sizeParams,
     },
 };
 
-const onTagCloseClick = () => {
-    console.log("Closed");
+export const Default = {
+    args: {
+        color: "primary",
+        size: "medium",
+        children: "Listing: Kayaking in the Ganges",
+        onClose: () => console.log("Closed"),
+    },
 };
 
-export const Default = ({ color, size, text }) => {
-    return (
-        <Tag color={color} size={size} onClose={onTagCloseClick}>
-            {text}
-        </Tag>
-    );
+export const BookingTag = {
+    args: {
+        color: "secondary",
+        size: "small",
+        children: "Listing: Kayaking in the Ganges",
+        onClose: () => console.log("Closed"),
+    },
 };
 
-export const BookingTag = () => {
-    return (
-        <Tag color="secondary" size="small" onClose={onTagCloseClick}>
-            Testing Tag
-        </Tag>
-    );
-};
-
-export const SystemTag = () => {
-    return (
-        <Tag color="secondary" size="small">
-            You cannot remove this tag
-        </Tag>
-    );
+export const SystemTag = {
+    args: {
+        color: "secondary",
+        size: "small",
+        children: "You cannot remove this tag",
+    },
 };
 
 export default TagStories;

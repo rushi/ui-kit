@@ -1,5 +1,6 @@
 import React from "react";
 import { ImageUpload } from "../..";
+import { sizeParams } from "../helpers";
 
 const ImageUploadStories = {
     title: "Media/Image Upload",
@@ -20,53 +21,12 @@ const ImageUploadStories = {
         size: "medium",
         maxSize: 5,
         hasDelete: true,
-        caption: "",
-        requirements: "",
     },
     argTypes: {
-        src: {
-            type: { required: true },
-            description: "The URL to the image",
-            control: {
-                type: "text",
-            },
-            table: {
-                type: { summary: null },
-                defaultValue: { summary: "none" },
-            },
-        },
-        size: {
-            description: "The size of the image",
-            options: ["small", "medium", "large"],
-            control: { type: "radio" },
-            table: {
-                type: { summary: null },
-                defaultValue: { summary: "medium" },
-            },
-        },
-        csvAcceptFormats: {
-            description: "The caption to show on the upload button",
-            control: { type: "text" },
-            table: {
-                type: { summary: null },
-                defaultValue: { summary: "Upload New Photo" },
-            },
-        },
-        isLoading: {
-            control: { type: "boolean" },
-            table: {
-                defaultValue: { summary: false },
-            },
-        },
+        size: sizeParams,
         maxSize: {
-            description: "Max file size",
+            description: "Max file size in megabytes",
             control: { type: "number" },
-        },
-        hasDelete: {
-            control: { type: "boolean" },
-            table: {
-                defaultValue: { summary: true },
-            },
         },
         requirements: {
             description: "The requirements for this image upload",

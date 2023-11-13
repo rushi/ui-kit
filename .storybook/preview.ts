@@ -4,23 +4,24 @@ import "../src/index.css";
 import xola from "./xola";
 
 const preview: Preview = {
-    argTypes: {
-        // // 👇 All stories expect a className arg
-        // className: {
-        //     control: "text",
-        //     description: "Tailwind class names to override styling",
-        // },
-    },
+    // argTypes: {
+    // // 👇 All stories expect a className arg
+    // className: {
+    //     control: "text",
+    //     description: "Tailwind class names to override styling",
+    // },
+    // },
     parameters: {
         docs: {
+            toc: true,
             theme: xola,
         },
         actions: { argTypesRegex: "^on[A-Z].*" },
         controls: {
             expanded: true,
             matchers: {
-                text: /className/i,
-                boolean: /isLoading|disabled|^should|^is/i,
+                text: /^className$/i,
+                bool: /isLoading|disabled|^should|^is/i,
             },
         },
         options: {

@@ -4,15 +4,13 @@ import { Dot } from "../..";
 const DotStories = {
     title: "Data Display/Dot",
     component: Dot,
+    tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
                 component: "A simple dot component to act as spacers between various elements",
             },
         },
-    },
-    args: {
-        color: "primary",
     },
     argTypes: {
         color: {
@@ -23,17 +21,11 @@ const DotStories = {
 };
 
 export const Default = {
-    render: ({ color }) => {
-        return (
-            <div className="space-x-4">
-                <Dot color={color} />
-            </div>
-        );
-    },
+    args: { color: "primary" },
 };
 
 export const AllColors = {
-    render: (args) => {
+    render: () => {
         return (
             <div className="space-x-4">
                 <Dot color="primary" />
