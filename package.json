@@ -24,7 +24,7 @@
         "lint:report": "xola-lint --ignore src/stories --reporter=json src > eslint_report.json",
         "test": "jest",
         "build": "node scripts/prepare && npx tsc && vite build",
-        "build:storybook": "npm run prepare && storybook build"
+        "build:storybook": "node scripts/prepare && storybook build"
     },
     "dependencies": {
         "@headlessui/react": "^1.4.0",
