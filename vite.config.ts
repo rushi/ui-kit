@@ -15,6 +15,7 @@ export default defineConfig({
         outDir: "build",
 
         lib: {
+            // TODO: Copy tailwind & postcss config
             entry: resolve(__dirname, "src/index.ts"),
             name: "XolaUIKit",
         },

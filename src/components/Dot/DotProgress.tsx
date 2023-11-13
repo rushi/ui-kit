@@ -1,6 +1,6 @@
+import React from "react";
 import { range } from "lodash";
 import { Dot } from "./Dot";
-import React from "react";
 
 export const DotProgress = ({ current, total }: { current: number; total: number }) => {
     if (total <= 1) {
