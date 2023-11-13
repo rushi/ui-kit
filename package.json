@@ -1,6 +1,6 @@
 {
     "name": "@xola/ui-kit",
-    "version": "2.1.27",
+    "version": "2.3.0",
     "description": "Xola UI Kit",
     "license": "MIT",
     "files": [
@@ -12,7 +12,7 @@
     ],
     "main": "build/ui-kit.umd.js",
     "module": "build/ui-kit.mjs",
-    "types": "index.d.ts",
+    "types": "build/index.d.ts",
     "scripts": {
         "prepare": "node scripts/prepare && vite build",
         "start": "npm run storybook",
@@ -23,7 +23,7 @@
         "lint:fix": "xola-lint src --ignore src/stories --fix=true",
         "lint:report": "xola-lint --ignore src/stories --reporter=json src > eslint_report.json",
         "test": "jest",
-        "build": "node scripts/prepare && vite build",
+        "build": "node scripts/prepare && npx tsc && vite build",
         "build:storybook": "node scripts/prepare && storybook build"
     },
     "dependencies": {
@@ -45,7 +45,8 @@
         "react-select": "^5.7.0",
         "storybook-addon-designs": "^6.3.1",
         "tailwind-merge": "^2.0.0",
-        "tippy.js": "^6.3.1"
+        "tippy.js": "^6.3.1",
+        "vite-plugin-dts": "^3.6.3"
     },
     "devDependencies": {
         "@babel/core": "^7.14.8",

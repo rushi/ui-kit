@@ -1,17 +1,23 @@
-import path from "path";
 import { defineConfig } from "vite";
+import { resolve } from "path";
+import react from "@vitejs/plugin-react";
+import dts from "vite-plugin-dts";
+// @ts-ignore
 import pkg from "./package.json";
 
 const dependencies = Object.keys(pkg.dependencies);
 const devDependencies = Object.keys(pkg.devDependencies);
 
 export default defineConfig({
+    // rollupTypes: true will combine all types into one file
+    plugins: [react(), dts({ copyDtsFiles: true, rollupTypes: false })],
     build: {
         copyPublicDir: false,
         outDir: "build",
 
         lib: {
-            entry: path.resolve(__dirname, "src/index.js"),
+            // TODO: Copy tailwind & postcss config
+            entry: resolve(__dirname, "src/index.ts"),
             name: "XolaUIKit",
         },
 
