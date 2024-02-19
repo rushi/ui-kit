@@ -2,12 +2,12 @@
 name: Publish @xola/ui-kit
 
 on:
-    workflow_dispatch:
-        inputs:
-            tag:
-                description: "Tag version"
-                default: latest
-                required: true
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag version"
+        default: next
+        required: true
 
 jobs:
     publish:

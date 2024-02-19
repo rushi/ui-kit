@@ -127,7 +127,7 @@ module.exports = {
         "./src/**/*.jsx",
         "./src/**/*.ts",
         "./src/**/*.tsx",
-        path.join(__dirname, "build/ui-kit.umd.js"),
+        path.join(__dirname, "build/ui-kit.es.js"),
     ],
 
     theme: {
@@ -221,5 +221,5 @@ module.exports = {
         },
     },
 
-    plugins: [require("@tailwindcss/forms"), require("@tailwindcss/line-clamp")],
+    plugins: [require("@tailwindcss/forms")],
 };

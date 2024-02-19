@@ -3,7 +3,7 @@ name: Publish UI Kit Storybook
 on:
     push:
         branches:
-            - "**" # matches every branch
+            - "master" # matches every branch
 
 jobs:
     publish:

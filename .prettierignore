@@ -1,4 +1,7 @@
-src/theme.js
-package-lock.json
-node_modules
+.idea
 .github
+git_ignore
+node_modules
+package.json
+package-lock.json
+src/theme.js
