@@ -1,5 +1,5 @@
 import React from "react";
-import { createIcon } from "./helpers/icon";
+import { createIcon } from "./helpers/icon.jsx";
 
 export const CircleCrossIcon = createIcon((props) => {
     return (

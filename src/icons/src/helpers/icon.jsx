@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
-import { iconSizes } from "./iconSizes";
+import { iconSizes } from "./iconSizes.js";
 
 export const createIcon = (Icon) => {
     const IconContainer = ({ size = "small", className, ...rest }) => {
