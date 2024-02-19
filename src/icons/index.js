@@ -21,7 +21,7 @@ export { BookIcon } from "./src/BookIcon.jsx";
 export { BookmarkIcon } from "./src/BookmarkIcon.jsx";
 export { BoxIcon } from "./src/BoxIcon.jsx";
 export { BriefcaseIcon } from "./src/BriefcaseIcon.jsx";
-export { BugIcon } from "./src/BugIcon.jsx";
+export { BugIcon } from "./src/BugIcon.tsx";
 export { ButtonCodeIcon } from "./src/ButtonCodeIcon.jsx";
 export { CakeIcon } from "./src/CakeIcon.jsx";
 export { CalendarDayIcon } from "./src/CalendarDayIcon.jsx";
