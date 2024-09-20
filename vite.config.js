@@ -12,11 +12,16 @@ export default defineConfig({
         lib: {
             entry: path.resolve(__dirname, "src/index.js"),
             name: "XolaUIKit",
+            fileName: (format) => `ui-kit.${format}.js`,
+            formats: ["es"]
         },
 
         rollupOptions: {
             // Make sure none of the dependencies are bundled.
-            external: [...dependencies, ...devDependencies],
+            external: [...dependencies, ...devDependencies]
         },
+    },
+    test: {
+        globals: true,
     },
 });

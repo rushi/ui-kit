@@ -274,4 +274,4 @@ export {
     WriteIcon,
     XolaBotIcon,
     XrayIcon,
-} from "./build/ui-kit.umd";
+} from "./build/ui-kit.es";

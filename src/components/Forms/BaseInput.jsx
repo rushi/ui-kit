@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { isEmpty, isString } from "lodash";
+import { isEmpty, isString } from "lodash-es";
 import PropTypes from "prop-types";
 import React, { forwardRef } from "react";
 import { Dot } from "../Dot/Dot";
@@ -40,7 +40,7 @@ export const BaseInput = forwardRef(
             return (
                 result
                     // Remove one or more whitespace characters that are not followed by a period
-                    .replace(/[^.\S]+/g, "")
+                    .replaceAll(/[^.\S]+/g, "")
                     // Remove any currency symbold
                     .replace(/[\p{Sc}]/u, "")
             );

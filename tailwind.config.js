@@ -127,7 +127,7 @@ module.exports = {
         "./src/**/*.jsx",
         "./src/**/*.ts",
         "./src/**/*.tsx",
-        path.join(__dirname, "build/ui-kit.umd.js"),
+        path.join(__dirname, "build/ui-kit.es.js"),
     ],
 
     theme: {

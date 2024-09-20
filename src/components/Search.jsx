@@ -1,11 +1,10 @@
 import clsx from "clsx";
 import { useCombobox } from "downshift";
-import debounce from "lodash/debounce";
+import { debounce } from "lodash-es";
 import PropTypes from "prop-types";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useId, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { isOSX } from "../helpers/browser";
-import { useId } from "../hooks/useId";
 import { useIsClient } from "../hooks/useIsClient";
 import { SearchIcon } from "../icons";
 import { Key } from "./Key";
@@ -138,13 +137,14 @@ export const Search = ({
     const isVisible = open || !shouldDestroyOnClose;
 
     return (
-        <div className="ui-search relative w-full">
+        <div suppressHydrationWarning className="ui-search relative w-full">
             <div {...getComboboxProps({ className: "w-full relative rounded-md" })}>
                 <div className="pointer-events-none absolute inset-y-0 -top-0.5 left-0 hidden items-center md:flex">
                     <SearchIcon className="h-4 w-4 text-gray-darker" />
                 </div>
 
                 <input
+                    suppressHydrationWarning
                     {...getInputProps({
                         id: inputId,
                         type: "text",

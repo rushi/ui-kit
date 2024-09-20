@@ -1,5 +1,16 @@
 {
-    "rules": {
-        "complexity": ["warn", { "max": 25 }]
-    }
+  "ignorePatterns": [
+    "src/stories",
+    "**/*.test.js*",
+    "**/*.test.ts*",
+    "**/test/**/*.*"
+  ],
+  "rules": {
+    "complexity": [
+      "warn",
+      {
+        "max": 25
+      }
+    ]
+  }
 }
