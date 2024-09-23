@@ -17,6 +17,19 @@ const LeftDrawerCountStyle = {
     background: "linear-gradient(138.65deg, #583DFF 19.59%, #F849C7 62.96%, #FFC03D 97.07%)",
 };
 
+const SidebarWidths = {
+    primary: {
+        "auto": "md:w-24 xl:w-50",
+        "full": "xl:w-50",
+        "compact": "md:w-24",
+    },
+    logo: {
+        "auto": "h-12 w-12 xl:h-30 xl:w-30",
+        "full": "xl:h-30 xl:w-30",
+        "compact": "h-12 w-12",
+    }
+}
+
 export const Sidebar = ({
     logo,
     children,
@@ -24,6 +37,7 @@ export const Sidebar = ({
     footer,
     notifications,
     isFixed = true,
+    size = "auto",
     onLogoClick,
     isStickyHeader = true,
     isStickyFooter = true,
@@ -35,6 +49,12 @@ export const Sidebar = ({
     const hideRightDrawer = rightDrawer?.count <= 0 || !rightDrawer;
     const isStickyHeaderFooter = isStickyHeader && isStickyFooter;
 
+    const sizeClass = SidebarWidths.primary[size];
+    console.log('width', size, sizeClass);
+
+    const logoClass = SidebarWidths.logo[size];
+    console.log('logo', size, logoClass);
+
     return (
         <div
             className={clsx(
@@ -42,11 +62,12 @@ export const Sidebar = ({
                 "ui-sidebar",
                 isFixed ? "fixed" : "relative",
                 !isStickyHeaderFooter && "overflow-y-auto",
-                "z-20 flex h-full w-16 flex-col bg-black px-1 py-2 text-white md:w-24 xl:w-50",
+                "z-20 flex h-full w-16 flex-col bg-black px-1 py-2 text-white",
+                sizeClass,
                 className,
             )}
         >
-            {leftDrawer || rightDrawer ? (
+            {/* {leftDrawer || rightDrawer ? (
                 <div
                     className={clsx(
                         "flex w-full p-2 sm:justify-center sm:space-x-2 xl:justify-between",
@@ -71,9 +92,9 @@ export const Sidebar = ({
                         </div>
                     )}
                 </div>
-            ) : null}
+            ) : null} */}
 
-            {leftDrawer && (
+            {/* {leftDrawer && (
                 <Drawer
                     classNames={{ dialogContent: "md:left-24 xl:left-50" }}
                     position="left"
@@ -95,14 +116,15 @@ export const Sidebar = ({
                     isOpen={isRightDrawerOpen}
                     onClose={(e) => !!e && handleDrawerStateChange("right")}
                 />
-            )}
+            )} */}
 
             <div className={clsx("flex-grow space-y-2", isStickyHeaderFooter && "overflow-y-auto")}>
                 <div className="text-center">
                     {logo ?? (
                         <XolaLogoSimple
                             className={clsx(
-                                "inline-block h-12 w-12 xl:h-30 xl:w-30",
+                                "inline-block",
+                                logoClass,
                                 onLogoClick && "cursor-pointer transition-opacity hover:opacity-80",
                             )}
                             onClick={onLogoClick}
@@ -124,6 +146,7 @@ Sidebar.propTypes = {
     className: PropTypes.string,
     footer: PropTypes.element.isRequired,
     isFixed: PropTypes.bool,
+    compact: PropTypes.oneOf(["auto", "true", "false"]),
     isStickyHeader: PropTypes.bool,
     isStickyFooter: PropTypes.bool,
     onLogoClick: PropTypes.func.isRequired,
