@@ -3,6 +3,7 @@
     "version": "3.0.7",
     "description": "Xola UI Kit",
     "license": "MIT",
+    "type": "module",
     "repository": {
         "type": "git",
         "url": "git://github.com/xola/ui-kit.git"
@@ -22,7 +23,7 @@
         "prepare": "node scripts/prepare && vite build",
         "start": "./scripts/storybook",
         "dev": "./scripts/storybook start --no-manager-cache",
-        "build": "npm run prepare && vite build && cp index.d.ts build",
+        "build": "vite build && bash scripts/wip-copy.sh && ls -l build/",
         "build:storybook": "npm run build && ./scripts/storybook build",
         "clean": "rm -rf node_modules/.vite",
         "lint": "xola-lint src",
