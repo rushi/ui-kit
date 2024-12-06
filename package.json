@@ -8,10 +8,8 @@
         "url": "git://github.com/xola/ui-kit.git"
     },
     "files": [
-        "dist",
+        "dist/",
         "index.css",
-        "index.js",
-        "index.cjs",
         "tailwind.config.cjs",
         "postcss.config.cjs"
     ],
