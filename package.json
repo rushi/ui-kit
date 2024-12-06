@@ -10,12 +10,7 @@
     "files": [
         "dist",
         "build",
-        "dist/index.cjs",
-        "dist/index.js",
-        "dist/src",
-        "index.css",
-        "tailwind.config.cjs",
-        "postcss.config.cjs"
+        "index.css"
     ],
     "type": "module",
     "main": "dist/index.js",
