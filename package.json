@@ -11,9 +11,10 @@
     "files": [
         "build",
         "index.css",
+        "style.css",
         "index.d.ts",
-        "tailwind.config.js",
-        "postcss.config.js",
+        "tailwind.config.cjs",
+        "postcss.config.cjs",
         "ui-kit.es.js"
     ],
     "main": "build/ui-kit.es.js",
