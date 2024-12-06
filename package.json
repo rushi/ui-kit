@@ -8,7 +8,9 @@
         "url": "git://github.com/xola/ui-kit.git"
     },
     "files": [
-        "dist/",
+        "dist/index.cjs",
+        "dist/index.js",
+        "dist/src",
         "index.css",
         "tailwind.config.cjs",
         "postcss.config.cjs"
@@ -41,6 +43,7 @@
         "@tailwindcss/forms": "^0.5.6",
         "@tailwindcss/line-clamp": "^0.4.4",
         "@tippyjs/react": "^4.2.6",
+        "@xola/ui-kit": "github:rushi/ui-kit#react-upgrade-esm",
         "clsx": "^1.2.1",
         "dayjs": "^1.11.13",
         "downshift": "^6.1.12",
