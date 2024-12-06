@@ -20,7 +20,6 @@
     "module": "build/ui-kit.es.js",
     "types": "build/index.d.ts",
     "scripts": {
-        "prepare": "node scripts/prepare && vite build",
         "start": "./scripts/storybook",
         "dev": "./scripts/storybook start --no-manager-cache",
         "build": "vite build && bash scripts/wip-copy.sh && ls -l build/",
