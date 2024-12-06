@@ -21,9 +21,10 @@
         }
     },
     "scripts": {
+        "prepare": "ls -la",
         "start": "./scripts/storybook",
         "dev": "./scripts/storybook start --no-manager-cache",
-        "build": "tsup && cp index.d.ts dist/ && tree dist/",
+        "build": "npm run prepare && tsup",
         "build:storybook": "npm run build && ./scripts/storybook build",
         "clean": "rm -rf node_modules/.vite",
         "lint": "xola-lint src",
