@@ -9,7 +9,6 @@
         "url": "git://github.com/xola/ui-kit.git"
     },
     "files": [
-        "build",
         "index.css",
         "style.css",
         "index.d.ts",
@@ -17,9 +16,9 @@
         "postcss.config.cjs",
         "ui-kit.es.js"
     ],
-    "main": "build/ui-kit.es.js",
-    "module": "build/ui-kit.es.js",
-    "types": "build/index.d.ts",
+    "main": "ui-kit.es.js",
+    "module": "ui-kit.es.js",
+    "types": "index.d.ts",
     "scripts": {
         "start": "./scripts/storybook",
         "dev": "./scripts/storybook start --no-manager-cache",
