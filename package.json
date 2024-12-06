@@ -11,20 +11,19 @@
         "dist"
     ],
     "type": "module",
-    "main": "dist/src/index.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/index.js",
     "exports": {
         "./package.json": "./package.json",
         ".": {
-            "import": "./dist/src/index.js",
-            "default": "./dist/src/index.cjs"
+            "import": "./dist/index.js",
+            "default": "./dist/index.cjs"
         }
     },
     "scripts": {
         "prepare": "ls -la",
         "start": "./scripts/storybook",
         "dev": "./scripts/storybook start --no-manager-cache",
-        "build": "npm run prepare && tsup",
+        "build": "tsup",
         "build:storybook": "npm run build && ./scripts/storybook build",
         "clean": "rm -rf node_modules/.vite",
         "lint": "xola-lint src",
@@ -60,6 +59,7 @@
         "tippy.js": "^6.3.7"
     },
     "devDependencies": {
+        "@arethetypeswrong/cli": "^0.17.0",
         "@babel/core": "^7.14.8",
         "@babel/preset-env": "^7.15.6",
         "@storybook/addon-actions": "^6.5.10",
