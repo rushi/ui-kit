@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { isArray, isFunction } from "lodash-es";
 import PropTypes from "prop-types";
 import React, { useContext, useEffect, useMemo, useState } from "react";
-import { DateUtils } from "react-day-picker";
+import ReactDayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import { Tooltip } from "../..";
 import cn from "../../helpers/classnames";
@@ -16,6 +16,8 @@ import { NavbarElement } from "./NavbarElement";
 import RangeDatePicker from "./RangeDatePicker";
 import { RelativeDateRange } from "./RelativeDateRange";
 import { UpcomingDatePicker } from "./UpcomingDatePicker";
+
+const DateUtils = ReactDayPicker.DateUtils;
 
 const variants = {
     single: "single",
@@ -188,13 +190,13 @@ export const DatePicker = ({
     const CaptionElement = useMemo(() => {
         return shouldShowYearPicker && currentMonth
             ? ({ date }) => (
-                  <MonthYearSelector
-                      date={date}
-                      currentMonth={currentMonth}
-                      locale={locale ?? contextLocale}
-                      onChange={handleMonthChange}
-                  />
-              )
+                <MonthYearSelector
+                    date={date}
+                    currentMonth={currentMonth}
+                    locale={locale ?? contextLocale}
+                    onChange={handleMonthChange}
+                />
+            )
             : undefined;
         // Adding `handleMonthChange` causes a lot of re-renders, and closes drop-down.
         // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -7,8 +7,8 @@
         "type": "git",
         "url": "git+https://github.com/xola/ui-kit.git"
     },
-    "main": "build/ui-kit.cjs.js",
-    "module": "build/ui-kit.es.js",
+    "main": "build/ui-kit.js",
+    "module": "build/ui-kit.mjs",
     "types": "build/index.d.ts",
     "files": [
         "build/**"
@@ -19,7 +19,7 @@
                 "default": "./build/tailwind.config.cjs"
             },
             "import": {
-                "default": "./build/tailwind.config.js"
+                "default": "./build/tailwind.config.mjs"
             }
         },
         "./postcss.config": {
@@ -33,11 +33,21 @@
         ".": {
             "require": {
                 "types": "./build/index.d.ts",
-                "default": "./build/ui-kit.cjs.js"
+                "default": "./build/ui-kit.js"
             },
             "import": {
                 "types": "./build/index.d.ts",
-                "default": "./build/ui-kit.es.js"
+                "default": "./build/ui-kit.mjs"
+            }
+        },
+        "./checkout": {
+            "require": {
+                "types": "./build/index.d.ts",
+                "default": "./build/checkout.js"
+            },
+            "import": {
+                "types": "./build/index.d.ts",
+                "default": "./build/checkout.mjs"
             }
         },
         "./index.css": "./build/index.css",
@@ -72,6 +82,7 @@
         "google-libphonenumber": "^3.2.39",
         "lodash-es": "^4.17.21",
         "nouislider-react": "^3.4.1",
+        "pluralize-esm": "^9.0.5",
         "prop-types": "^15.8.1",
         "react": "^18.3.1",
         "react-day-picker": "^7.4.10",

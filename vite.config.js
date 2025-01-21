@@ -16,8 +16,18 @@ export default defineConfig({
                 checkout: path.resolve(__dirname, "src/checkout.js"),
             },
             name: "XolaUIKit",
-            fileName: (format, name) => `${name}.${format}.js`,
+            // fileName: (format, name) => `${name}.${format}.js`,
             formats: ["es", "cjs"],
+        },
+
+        optimizeDeps: {
+            include: ['prop-types'],
+        },
+
+        resolve: {
+            alias: {
+                'prop-types': 'prop-types/prop-types.js',
+            },
         },
 
         rollupOptions: {
@@ -34,7 +44,7 @@ export default defineConfig({
                         { src: "index.css", dest: "build" },
                         { src: "index.d.ts", dest: "build" },
                         { src: "tailwind-config", dest: "build" },
-                        { src: "tailwind.config.js", dest: "build" },
+                        { src: "tailwind.config.js", dest: "build", rename: "tailwind.config.mjs" },
                         { src: "tailwind.config.cjs", dest: "build" },
                         { src: "postcss.config.js", dest: "build" },
                         { src: "postcss.config.cjs", dest: "build" },

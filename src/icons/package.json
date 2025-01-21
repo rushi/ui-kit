@@ -1,20 +1,27 @@
 {
     "name": "@xola/icons",
-    "version": "1.1.4",
+    "version": "1.2.0",
     "description": "Xola's icon set",
     "repository": {
         "type": "git",
         "url": "git://github.com/xola/ui-kit.git"
     },
     "files": [
-        "build",
-        "build/icons.es.js"
+        "build/**"
     ],
-    "main": "build/icons.es.js",
-    "module": "build/icons.es.js",
+    "main": "build/icons.js",
+    "module": "build/icons.mjs",
+    "exports": {
+        ".": {
+            "require": {
+                "default": "./build/icons.js"
+            },
+            "import": {
+                "default": "./build/icons.mjs"
+            }
+        }
+    },
     "scripts": {
-        "preinstall": "vite build",
-        "prepare": "vite build",
         "build": "vite build",
         "format": "prettier --write -l src",
         "lint": "xola-lint src",
@@ -28,6 +35,7 @@
         "prettier-plugin-tailwindcss": "^0.1.13",
         "react": "18.2",
         "react-dom": "18.2",
+        "rollup-plugin-copy": "^3.5.0",
         "tailwind-merge": "^2.5.5",
         "tailwindcss": "3.4"
     },

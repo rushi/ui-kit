@@ -1,7 +1,7 @@
-import { PhoneNumberFormat, PhoneNumberUtil } from "google-libphonenumber";
+import PhoneNumberLib from "google-libphonenumber";
 
-const PNF = PhoneNumberFormat;
-const phoneUtil = PhoneNumberUtil.getInstance();
+const PNF = PhoneNumberLib.PhoneNumberFormat;
+const phoneUtil = PhoneNumberLib.PhoneNumberUtil.getInstance();
 
 export const getRegionCode = (number, countryCode = "US") => {
     try {

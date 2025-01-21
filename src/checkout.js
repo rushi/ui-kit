@@ -41,7 +41,7 @@ export { almostZero, compactNumber, numberFormat, roundNumber } from "./utils/nu
 export { getSymbol, isZeroDecimal } from "./utils/currency";
 export { formatDate, formatTime, dateFromObjectId } from "./utils/date";
 export { isOSX, isIosBrowser } from "./helpers/browser";
-export { flash } from "./helpers/flash";
+// export { flash } from "./helpers/flash";
 export { getChildByType, getChildrenByType } from "./helpers/children";
 
 export { useIsClient } from "./hooks/useIsClient";
