@@ -57,7 +57,7 @@
         "start": "./scripts/storybook",
         "dev": "./scripts/storybook start --no-manager-cache",
         "prepare": "npm run build",
-        "build": "npm run generateConfig && vite build && eza -l build",
+        "build": "npm run generateConfig && vite build",
         "ci": "npm run build",
         "build:storybook": "npm run build && ./scripts/storybook build",
         "generateConfig": "node scripts/generateConfig.js",
