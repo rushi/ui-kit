@@ -14,7 +14,7 @@ export const Radio = ({
 }) => {
     const inputClassName = disabled ? "!bg-gray-lighter" : "cursor-pointer";
     return (
-        <label className={cn("flex w-fit items-center", className)} data-testid="radio-input-label">
+        <label className={cn("flex w-fit", className)} data-testid="radio-input-label">
             <input
                 checked={checked}
                 disabled={disabled}
