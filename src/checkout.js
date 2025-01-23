@@ -22,6 +22,7 @@ export { Select } from "./components/Forms/Select";
 export { ComboBox } from "./components/Forms/ComboBox";
 export { Switch } from "./components/Forms/Switch";
 export { Checkbox } from "./components/Forms/Checkbox";
+export { Radio } from "./components/Forms/Radio";
 export { Label } from "./components/Forms/Label";
 export { Tabs } from "./components/Tabs/index.js";
 export { Skeleton } from "./components/Skeleton";
