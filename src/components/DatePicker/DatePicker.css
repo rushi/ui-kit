@@ -30,7 +30,7 @@
   */
 .DayPicker-Month {
     @apply mx-0 my-0 p-0 pt-0.5 ring-0 focus:outline-none focus:ring-0;
-    min-width: 400px; /* Odd width given from Figma */
+    @apply w-[335px] lg:w-100;
     border-collapse: inherit;
     border-spacing: 0 8px; /* 8px between each week (row) */
 }

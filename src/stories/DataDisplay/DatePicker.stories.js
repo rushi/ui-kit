@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import React, { useState } from "react";
-import { Button, DatePicker, DatePickerPopover, Switch, theme } from "../..";
+import { Button, DatePicker, DatePickerPopover, Switch } from "../..";
+import twConfig from "../../../tailwind.config";
 import { formatDate } from "../../utils/date";
 
 const DatePickerStories = {
@@ -21,7 +22,7 @@ const DatePickerStories = {
     },
 };
 
-const { colors } = theme;
+const { colors } = twConfig.theme;
 
 // We use a fixed date instead of today to avoid flaky tests
 const defaultDate = new Date("2022-10-10");
