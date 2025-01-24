@@ -8,6 +8,7 @@ export { Dot } from "./components/Dot/Dot";
 export { DotProgress } from "./components/Dot/DotProgress";
 export { Alert } from "./components/Alert";
 export { Tooltip } from "./components/Tooltip";
+export { OldTooltip } from "./components/OldTooltip";
 export { Popover } from "./components/Popover/Popover";
 export { Modal } from "./components/Modal";
 export { ButtonGroup } from "./components/Buttons/ButtonGroup";

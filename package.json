@@ -1,6 +1,6 @@
 {
     "name": "@xola/ui-kit",
-    "version": "3.0.10",
+    "version": "3.0.12",
     "description": "Xola UI Kit",
     "license": "MIT",
     "repository": {
@@ -72,6 +72,7 @@
     "dependencies": {
         "@headlessui/react": "1.6",
         "@nextui-org/slider": "^2.4.5",
+        "@radix-ui/react-tooltip": "^1.1.7",
         "@tailwindcss/forms": "^0.5.6",
         "@tailwindcss/line-clamp": "^0.4.4",
         "@tippyjs/react": "^4.2.6",
@@ -95,6 +96,7 @@
         "rollup-plugin-copy": "^3.5.0",
         "storybook-addon-designs": "^6.3.1",
         "tailwind-merge": "^2.5.5",
+        "tailwindcss-animate": "^1.0.7",
         "tippy.js": "^6.3.7"
     },
     "devDependencies": {

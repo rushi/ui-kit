@@ -20,7 +20,7 @@ export default defineConfig({
 
         rollupOptions: {
             // Make sure none of the dependencies are bundled.
-            external: [...dependencies, ...devDependencies]
+            external: [...dependencies, ...devDependencies],
         },
     },
 });

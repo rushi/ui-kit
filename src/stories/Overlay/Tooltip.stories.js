@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Tooltip, UserIcon } from "../..";
 
 // More props in docs
-const documentationUrl = "https://atomiks.github.io/tippyjs/v6/all-props/";
+const documentationUrl = "https://floating-ui.com/docs/useFloating#options";
 
 const TooltipStories = {
     title: "Overlay/Tooltip",
@@ -14,9 +14,7 @@ const TooltipStories = {
         allowHTML: false,
         delay: 0,
         maxWidth: 350,
-        duration: [300, 250],
         offset: [0, 10],
-        zIndex: 9999,
     },
     parameters: {
         design: {
@@ -52,7 +50,6 @@ const TooltipStories = {
             null,
             "Specifies the maximum width of the tooltip. Useful to prevent it from being too horizontally wide to read",
         ),
-        duration: getArgument([300, 250], "array", null, "Duration in ms of the transition animation"),
         offset: getArgument(
             [0, 10],
             "array",

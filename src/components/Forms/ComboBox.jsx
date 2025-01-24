@@ -16,9 +16,9 @@ export const ComboBox = forwardRef(({ isCreatable = false, className, isError, .
             components={
                 isCreatable
                     ? {
-                        IndicatorsContainer: () => null,
-                        Menu: () => null,
-                    }
+                          IndicatorsContainer: () => null,
+                          Menu: () => null,
+                      }
                     : null
             }
             {...rest}
