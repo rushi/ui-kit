@@ -63,11 +63,4 @@ export { getChildByType, getChildrenByType } from "./helpers/children";
 export { useIsClient } from "./hooks/useIsClient";
 export { useViewportHeight } from "./hooks/useViewportHeight";
 
-//
-// IMPORTANT: Add all icon exports into icons/index.js, and it will be published as a new package @xola/icons
-// This is temporary only for backward compatibility. Later all icons will be removed from @xola/ui-kit and only
-// @xola/icons will be used
-//
-export * from "./icons/index.js";
-
 export { Provider } from "./components/Provider";

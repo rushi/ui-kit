@@ -7,18 +7,18 @@
         "type": "git",
         "url": "git://github.com/xola/ui-kit.git"
     },
+    "main": "build/icons.cjs",
+    "module": "build/icons.js",
     "files": [
         "build/**"
     ],
-    "main": "build/icons.js",
-    "module": "build/icons.mjs",
     "exports": {
         ".": {
             "require": {
-                "default": "./build/icons.js"
+                "default": "./build/icons.cjs"
             },
             "import": {
-                "default": "./build/icons.mjs"
+                "default": "./build/icons.js"
             }
         }
     },
@@ -32,11 +32,26 @@
         "autoprefixer": "^10.4.20",
         "clsx": "^1.1.1",
         "postcss": "^8.4.49",
-        "react": "18.2",
-        "react-dom": "18.2",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "rollup-plugin-copy": "^3.5.0",
         "tailwind-merge": "^2.5.5",
         "tailwindcss": "3.4"
+    },
+    "devDependencies": {
+        "@types/react": "^18.3.8",
+        "@types/react-dom": "^18.3.0",
+        "prettier": "^3.4.2",
+        "prettier-plugin-tailwindcss": "^0.6.11",
+        "vite": "5.4"
+    },
+    "peerDependencies": {
+        "@types/react": "^18.2.22",
+        "@types/react-dom": "^18.2.7",
+        "autoprefixer": "^10.3.1",
+        "postcss": "8.4",
+        "tailwindcss": "3.4",
+        "vite": "5.4"
     },
     "engines": {
         "node": ">=20"
@@ -51,10 +66,5 @@
         "arrowParens": "always",
         "bracketSameLine": false,
         "tabWidth": 4
-    },
-    "devDependencies": {
-        "prettier": "^3.4.2",
-        "prettier-plugin-tailwindcss": "^0.6.11",
-        "vite": "5.4"
     }
 }
