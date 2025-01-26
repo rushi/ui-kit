@@ -20,7 +20,6 @@ export { ValuePopoverText } from "./components/Forms/ValuePopoverText";
 export { Input } from "./components/Forms/Input";
 export { Textarea } from "./components/Forms/Textarea";
 export { Select } from "./components/Forms/Select";
-export { ComboBox } from "./components/Forms/ComboBox";
 export { Switch } from "./components/Forms/Switch";
 export { Checkbox } from "./components/Forms/Checkbox";
 export { Radio } from "./components/Forms/Radio";

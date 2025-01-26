@@ -1,5 +1,3 @@
-"use client";
-
 import React, { forwardRef } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import cn from "../helpers/classnames";
@@ -62,4 +60,4 @@ function Tooltip({
     );
 }
 
-export { Tooltip, TooltipBase, TooltipTrigger, TooltipContent, TooltipProvider };
+export { Tooltip };

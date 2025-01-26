@@ -24,7 +24,7 @@ const options = {
     THIS_YEAR: "P1Y,first day of this year",
 };
 
-export const dateRanges = {
+const dateRanges = {
     day: {
         label: "Day",
         options: [

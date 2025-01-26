@@ -1,25 +1,29 @@
 import path from "path";
+import copy from "rollup-plugin-copy";
 import { defineConfig } from "vite";
 import pkg from "./package.json";
-import copy from "rollup-plugin-copy";
 
 const dependencies = Object.keys(pkg.dependencies);
 const devDependencies = Object.keys(pkg.devDependencies);
+const separateChunks = ["phone", "react-select", "combobox", "icons"];
 
 export default defineConfig({
     build: {
         outDir: "build",
         minify: false,
         cssMinify: false,
+        sourcemap: false,
 
+        // https://vite.dev/guide/build.html#library-mode
         lib: {
             entry: {
                 "ui-kit": path.resolve(__dirname, "src/index.js"),
                 checkout: path.resolve(__dirname, "src/checkout.js"),
             },
             name: "XolaUIKit",
-            // fileName: (format, name) => `${name}.${format}.js`,
+            fileName: (format, name) => `${name}.${format === "es" ? "mjs" : "js"}`,
             formats: ["es", "cjs"],
+            // formats: ["es"],
         },
 
         optimizeDeps: {
@@ -33,10 +37,6 @@ export default defineConfig({
         },
 
         rollupOptions: {
-            // input: {
-            //     main: path.resolve(__dirname, "src/index.js"),
-            //     checkout: path.resolve(__dirname, "src/checkout.js"),
-            // },
             // Make sure none of the dependencies are bundled.
             external: [...dependencies, ...devDependencies],
             plugins: [
@@ -53,16 +53,23 @@ export default defineConfig({
                     ],
                 }),
             ],
-            // Leave commented out - testing multiple outputs
-            // input: {
-            //     server: "src/utils/index.js",
-            //     all: "src/index.js",
-            // },
-            // output: {
-            //     name: "browser",
-            //     entryFileNames: `ui-kit.[name].js`,
-            //     formats: ["es"]
-            // }
+            output: {
+                // chunkFileNames: (info) => {
+                //     // console.log(info.name, info.exports.length, info.moduleIds.length);
+                //     if (info.name === "Number") {
+                //         return "shared-[hash].js"
+                //     }
+                //     return "[name]-[hash].js"
+                // },
+                // entryFileNames: (info) => {
+                //     // console.log(info.name);
+                //     return "[name].js";
+                // },
+                // manualChunks(id) {
+                //     const chunk = separateChunks.find((c) => id.toLowerCase().includes(c.toLowerCase()));
+                //     return chunk ? chunk : id.includes("node_modules") ? "libs" : null; // null puts it in the main package
+                // },
+            },
         },
     },
     test: {
