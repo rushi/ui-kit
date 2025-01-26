@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { forwardRef } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
@@ -25,7 +25,16 @@ const TooltipContent = forwardRef(({ className, sideOffset = 4, ...props }, ref)
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
 // https://www.radix-ui.com/primitives/docs/components/tooltip#api-reference
-function Tooltip({ content, className, arrowClassName, children, offset = [2], placement = "right", delay = 1, ...options }) {
+function Tooltip({
+    content,
+    className,
+    arrowClassName,
+    children,
+    offset = [2],
+    placement = "right",
+    delay = 1,
+    ...options
+}) {
     const sideOffset = options.skidding ?? offset[0];
     if (options.maxWidth) {
         console.log(`%c🚨 Xola Warning: Tooltip's maxWidth attribute is no longer supported`, `color:red`);
@@ -39,7 +48,12 @@ function Tooltip({ content, className, arrowClassName, children, offset = [2], p
         <TooltipProvider>
             <TooltipBase delayDuration={delay}>
                 <TooltipTrigger>{children}</TooltipTrigger>
-                <TooltipContent side={placement} sideOffset={sideOffset} className={cn("max-w-[350px]", className)} {...options}>
+                <TooltipContent
+                    side={placement}
+                    sideOffset={sideOffset}
+                    className={cn("max-w-[350px]", className)}
+                    {...options}
+                >
                     {content}
                     <TooltipPrimitive.Arrow />
                 </TooltipContent>

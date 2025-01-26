@@ -72,7 +72,7 @@
 
 .DayPicker-Day {
     @apply h-8 w-8 !p-0 leading-3 ring-0 focus:outline-none focus:ring-0;
-    @apply !pl-3; /* This will center the cell */
+    @apply !pl-0.5 lg:!pl-3; /* This will center the cell */
 }
 
 /* .DayPicker-Day .ui-day-content-value {
