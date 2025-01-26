@@ -4,7 +4,7 @@ import React, { forwardRef, Fragment } from "react";
 import { isIosBrowser } from "../helpers/browser";
 import cn from "../helpers/classnames";
 import { useViewportHeight } from "../hooks/useViewportHeight";
-import { CloseIcon } from "../icons";
+import { CloseIcon } from "../icons/src/CloseIcon";
 import { Button } from "./Buttons/Button";
 
 const sizes = {

@@ -5,7 +5,6 @@ import pkg from "./package.json";
 
 const dependencies = Object.keys(pkg.dependencies);
 const devDependencies = Object.keys(pkg.devDependencies);
-const separateChunks = ["phone", "react-select", "combobox", "icons"];
 
 export default defineConfig({
     build: {
@@ -54,14 +53,15 @@ export default defineConfig({
                 }),
             ],
             output: {
-                // chunkFileNames: (info) => {
-                //     // console.log(info.name, info.exports.length, info.moduleIds.length);
-                //     if (info.name === "Number") {
-                //         return "shared-[hash].js"
-                //     }
-                //     return "[name]-[hash].js"
-                // },
-                // entryFileNames: (info) => {
+                hashCharacters: "base36",
+                chunkFileNames: (info) => {
+                    const ext = info.exports[0] === "Alert" ? "js" : "mjs";
+                    if (info.name === "Number") {
+                        return `shared-[hash].${ext}`
+                    }
+                    return `[name]-[hash].${ext}`
+                },
+                // // entryFileNames: (info) => {
                 //     // console.log(info.name);
                 //     return "[name].js";
                 // },

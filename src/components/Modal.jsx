@@ -2,7 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import PropTypes from "prop-types";
 import React, { Fragment } from "react";
 import cn from "../helpers/classnames";
-import { CloseIcon } from "../icons";
+import { CloseIcon } from "../icons/src/CloseIcon";
 
 const sizes = {
     small: "max-w-100", // 400px

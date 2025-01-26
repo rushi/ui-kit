@@ -13,7 +13,7 @@ import "tippy.js/animations/shift-toward.css";
 export const OldTooltip = ({ children, className, contentClassName, content, ...rest }) => {
     const tooltipContent = contentClassName ? <span className={contentClassName}>{content}</span> : content;
     return (
-        <Tippy content={tooltipContent} {...rest} className="ui-tooltip text-white" plugins={[followCursor]}>
+        <Tippy content={tooltipContent} {...rest} className="ui-old-tooltip text-white" plugins={[followCursor]}>
             <span className={className}>{children}</span>
         </Tippy>
     );

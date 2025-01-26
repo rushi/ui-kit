@@ -2,7 +2,7 @@ import { Transition } from "@headlessui/react";
 import cn from "./classnames";
 import React, { Fragment } from "react";
 import toast from "react-hot-toast";
-import { CloseIcon } from "../icons";
+import { CloseIcon } from "../icons/src/CloseIcon";
 
 const colors = {
     primary: "bg-primary",

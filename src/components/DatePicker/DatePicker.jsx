@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import ReactDayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
-import { Tooltip } from "../..";
+import { Tooltip } from "../Tooltip";
 import cn from "../../helpers/classnames";
 import { isSame, isValidTimeZoneName, now, toDate } from "../../utils/date";
 import { Context } from "../Provider";

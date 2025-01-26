@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 import cn from "../helpers/classnames";
-import { Breadcrumb, Search } from "..";
+import { Breadcrumb } from "./Breadcrumb";
+import { Search } from "./Search";
 
 export const HeaderToolbar = ({ classNames, children }) => {
     return (

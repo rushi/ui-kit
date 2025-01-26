@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import cn from "../../helpers/classnames";
-import { ChevronRightIcon } from "../../icons";
+import { ChevronRightIcon } from "../../icons/src/ChevronRightIcon";
 import { Avatar } from "../Avatar";
 
 export const SidebarAccount = ({

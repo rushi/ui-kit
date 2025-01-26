@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
 import React, { useRef, useState } from "react";
-import { Button, Logo, SubmitButton } from "..";
+import { Button } from "./Buttons/Button";
+import { SubmitButton } from "./Buttons/SubmitButton";
+import { Logo } from "./Logo";
 import cn from "../helpers/classnames";
-import { ImageIcon, TrashIcon } from "../icons/";
+import { TrashIcon } from "../icons/src/TrashIcon";
+import { ImageIcon } from "../icons/src/ImageIcon";
 
 export const ImageUpload = ({
     src,

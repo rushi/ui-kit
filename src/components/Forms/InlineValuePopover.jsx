@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import cn from "../../helpers/classnames";
-import { DownArrowIcon } from "../../icons";
+import { DownArrowIcon } from "../../icons/src/DownArrowIcon";
 import { Popover } from "../Popover/Popover";
 import { ValuePopoverText } from "./ValuePopoverText";
 

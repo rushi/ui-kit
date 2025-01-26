@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import React from "react";
 import cn from "../../helpers/classnames";
-import { AnnounceIcon, BellIcon, XolaLogoSimple } from "../../icons";
+import { AnnounceIcon } from "../../icons/src/AnnounceIcon";
+import { BellIcon } from "../../icons/src/BellIcon";
+import { XolaLogoSimple } from "../../icons/src/images/XolaLogoSimple";
 import { Counter } from "../Counter";
 import { Drawer } from "../Drawer";
 import { SidebarAccount } from "./Sidebar.Account";

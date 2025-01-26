@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import React, { cloneElement, forwardRef, useEffect, useState } from "react";
 import cn from "../../helpers/classnames";
-import { CalendarIcon, DownArrowIcon } from "../../icons";
+import { CalendarIcon } from "../../icons/src/CalendarIcon";
+import { DownArrowIcon } from "../../icons/src/DownArrowIcon";
 import { formatDate } from "../../utils/date";
 import { Input } from "../Forms/Input";
 import { Popover } from "../Popover/Popover";

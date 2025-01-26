@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 import cn from "../../helpers/classnames";
-import { ChevronLeftIcon, ChevronRightIcon } from "../../icons";
+import { ChevronLeftIcon } from "../../icons/src/ChevronLeftIcon";
+import { ChevronRightIcon } from "../../icons/src/ChevronRightIcon";
 
 /**
  * Render the custom left & right arrows to change the current month.

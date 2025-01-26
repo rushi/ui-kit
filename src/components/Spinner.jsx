@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import cn from "../helpers/classnames";
-import { CircleNotch } from "../icons";
+import { CircleNotch } from "../icons/src/CircleNotch";
 
 const colors = {
     primary: "text-primary",

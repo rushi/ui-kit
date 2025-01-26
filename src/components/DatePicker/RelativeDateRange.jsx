@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { Button, Select } from "../..";
+import { Button } from "../Buttons/Button";
+import { Select } from "../Forms/Select";
 import { now, toDate } from "../../utils/date";
 
 const options = {
