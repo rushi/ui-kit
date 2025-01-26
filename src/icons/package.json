@@ -1,7 +1,8 @@
 {
     "name": "@xola/icons",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Xola's icon set",
+    "type": "module",
     "repository": {
         "type": "git",
         "url": "git://github.com/xola/ui-kit.git"
@@ -31,8 +32,6 @@
         "autoprefixer": "^10.4.20",
         "clsx": "^1.1.1",
         "postcss": "^8.4.49",
-        "prettier": "^2.7.1",
-        "prettier-plugin-tailwindcss": "^0.1.13",
         "react": "18.2",
         "react-dom": "18.2",
         "rollup-plugin-copy": "^3.5.0",
@@ -40,7 +39,7 @@
         "tailwindcss": "3.4"
     },
     "engines": {
-        "node": ">=18"
+        "node": ">=20"
     },
     "prettier": {
         "semi": true,
@@ -54,6 +53,8 @@
         "tabWidth": 4
     },
     "devDependencies": {
+        "prettier": "^3.4.2",
+        "prettier-plugin-tailwindcss": "^0.6.11",
         "vite": "5.4"
     }
 }
