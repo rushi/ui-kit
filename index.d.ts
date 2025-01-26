@@ -3,7 +3,6 @@
 export {
     Alert,
     almostZero,
-    AppStoreBadge,
     Avatar,
     Badge,
     Breadcrumb,
@@ -11,7 +10,6 @@ export {
     Button,
     ButtonGroup,
     Checkbox,
-    CircleNotch,
     ComboBox,
     compactNumber,
     Counter,
@@ -45,7 +43,6 @@ export {
     Number,
     numberFormat,
     Phone,
-    PlayMarketBadge,
     Popover,
     PopoverList,
     Provider,
@@ -65,9 +62,8 @@ export {
     Tabs,
     Tag,
     Textarea,
-    theme,
     Tooltip,
     ToggleButton,
     useIsClient,
     useViewportHeight,
-} from "./build/ui-kit.es";
+} from "./build/ui-kit.mjs";

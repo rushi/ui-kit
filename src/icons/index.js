@@ -1,3 +1,4 @@
+export { iconSizes } from "./src/helpers/iconSizes";
 export { AccountIcon } from "./src/AccountIcon";
 export { AddNoteIcon } from "./src/AddNoteIcon";
 export { AddSquareIcon } from "./src/AddSquareIcon";

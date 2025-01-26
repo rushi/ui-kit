@@ -31,6 +31,7 @@ export { Select } from "./components/Forms/Select";
 export { ComboBox } from "./components/Forms/ComboBox";
 export { Switch } from "./components/Forms/Switch";
 export { Checkbox } from "./components/Forms/Checkbox";
+export { Radio } from "./components/Forms/Radio.jsx";
 export { Label } from "./components/Forms/Label";
 export { RangeSlider } from "./components/Forms/RangeSlider";
 export { HeaderToolbar } from "./components/HeaderToolbar";

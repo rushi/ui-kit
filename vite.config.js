@@ -9,6 +9,8 @@ const devDependencies = Object.keys(pkg.devDependencies);
 export default defineConfig({
     build: {
         outDir: "build",
+        minify: false,
+        cssMinify: false,
 
         lib: {
             entry: {
