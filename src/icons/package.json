@@ -21,7 +21,8 @@
             },
             "import": {
                 "default": "./build/icons.js"
-            }
+            },
+            "types": "./index.d.ts"
         }
     },
     "scripts": {
