@@ -15,8 +15,8 @@
     "theme.css",
     "tailwind.config.js",
     "postcss.config.js",
-    "ui-kit-lib.css",
-    "ui-kit.js"
+    "build/ui-kit-lib.css",
+    "build/ui-kit.js"
   ],
   "exports": {
     ".": "./build/ui-kit.js",
@@ -26,8 +26,7 @@
     "./ui-kit-lib.css": "./build/ui-kit-lib.css"
   },
   "scripts": {
-    "prepack": "npm run build --prepack",
-    "prepublishOnly": "npm run build --prepublishOnly",
+    "prepare": "npm run build",
     "build": "npx vite build",
     "ci": "npx vite build",
     "dev": "storybook dev -p 6006 --no-open",
