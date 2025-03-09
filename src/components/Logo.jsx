@@ -9,9 +9,7 @@ const sizes = {
 };
 
 export const Logo = ({ className = "", size = "small", ...rest }) => {
-    return (
-        <img className={cn("ui-logo", (className = ""), "inline-block rounded object-cover", sizes[size])} {...rest} />
-    );
+    return <img className={cn("ui-logo inline-block rounded object-cover", sizes[size], className)} {...rest} />;
 };
 
 Logo.sizes = sizes;

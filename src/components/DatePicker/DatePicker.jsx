@@ -17,7 +17,7 @@ import RangeDatePicker from "./RangeDatePicker";
 import { RelativeDateRange } from "./RelativeDateRange";
 import { UpcomingDatePicker } from "./UpcomingDatePicker";
 
-const DateUtils = ReactDayPicker.DateUtils;
+const { DateUtils } = ReactDayPicker;
 
 const variants = {
     single: "single",

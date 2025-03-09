@@ -1,5 +1,5 @@
-import React, { forwardRef } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import React, { forwardRef } from "react";
 import cn from "../helpers/classnames";
 
 const TooltipBase = TooltipPrimitive.Root;
@@ -37,6 +37,7 @@ function Tooltip({
     if (options.maxWidth) {
         console.log(`%c🚨 Xola Warning: Tooltip's maxWidth attribute is no longer supported`, `color:red`);
     }
+
     if (options.trigger) {
         // TODO: options.trigger will not work. You need to manually control the trigger
         console.log(`%c🚨 Xola Warning: Tooltip's trigger attribute is no longer supported`, `color:red`);
@@ -53,7 +54,7 @@ function Tooltip({
                     {...options}
                 >
                     {content}
-                    <TooltipPrimitive.Arrow />
+                    <TooltipPrimitive.Arrow className={arrowClassName} />
                 </TooltipContent>
             </TooltipBase>
         </TooltipProvider>

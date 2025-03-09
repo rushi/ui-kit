@@ -24,7 +24,7 @@ const sizes = {
 export const Spinner = ({ className = "", size = "small", color = "secondary", ...rest }) => {
     return (
         <CircleNotch
-            className={cn("ui-spinner", (className = ""), sizes[size], colors[color], "inline-block animate-spin")}
+            className={cn("ui-spinner inline-block animate-spin", sizes[size], colors[color], className)}
             {...rest}
         />
     );

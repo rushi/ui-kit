@@ -7,7 +7,7 @@ export const Checkbox = ({ label, className = "", classNames = {}, ...rest }) =>
     const id = useId("checkbox");
 
     return (
-        <div className={cn("ui-checkbox", (className = ""), "flex items-center")}>
+        <div className={cn("ui-checkbox flex items-center", className)}>
             <input
                 type="checkbox"
                 className={cn(

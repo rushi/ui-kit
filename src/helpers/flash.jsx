@@ -1,8 +1,8 @@
 import { Transition } from "@headlessui/react";
-import cn from "./classnames";
 import React, { Fragment } from "react";
 import toast from "react-hot-toast";
 import { CloseIcon } from "../icons/src/CloseIcon";
+import cn from "./classnames";
 
 const colors = {
     primary: "bg-primary",
@@ -35,7 +35,7 @@ export const flash = {
             finalProps.duration = Number.POSITIVE_INFINITY;
         }
 
-        const classNames = flash.getStyles(color, size, (className = ""), canClose);
+        const classNames = flash.getStyles(color, size, className);
         return toast.custom(flash.container.bind(this, text, classNames, canClose ? onClose : null), finalProps);
     },
 
