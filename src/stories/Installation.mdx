@@ -29,21 +29,21 @@ npm install @xola/ui-kit
 Install peer dependencies:
 
 ```bash
-npm install autoprefixer postcss tailwindcss lodash
+npm install autoprefixer postcss tailwindcss lodash-es
 ```
 
 Create PostCSS and Tailwind config files:
 
 ```bash
-echo 'module.exports = require("@xola/ui-kit/tailwind.config");' > tailwind.config.js
-echo 'module.exports = require("@xola/ui-kit/postcss.config");' > postcss.config.js
+echo 'import tailwindConfig from "@xola/ui-kit/tailwind.config";\nexport default tailwindConfig;' > tailwind.config.js
+echo 'import postcss from "@xola/ui-kit/postcss.config";\nexport default postcss;' > postcss.config.js
 ```
 
 Import main CSS files in your project:
 
 ```js
-import "@xola/ui-kit/index.css";
-import "@xola/ui-kit/build/style.css";
+import "@xola/ui-kit/ui-kit-lib.css";
+import "@xola/ui-kit/ui-kit-theme.css";
 ```
 
 UI kit expects you already have a working React dev environment with PostCSS support.
@@ -61,7 +61,7 @@ import { Button } from "@xola/ui-kit";
 Install all required dependencies:
 
 ```bash
-$ nvm use # Project needs Node.js v16 with NPM v7
+$ nvm use
 $ npm install
 ```
 

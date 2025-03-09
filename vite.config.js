@@ -10,8 +10,8 @@ export default defineConfig({
     assetsInclude: ["README.md"],
     build: {
         outDir: "build",
-        minify: true,
-        cssMinify: true,
+        minify: false,
+        cssMinify: false,
         sourcemap: false,
 
         // https://vite.dev/guide/build.html#library-mode
@@ -24,17 +24,25 @@ export default defineConfig({
         rollupOptions: {
             // Make sure none of the dependencies are bundled.
             external: [...dependencies, ...devDependencies],
-            plugins: [
-                copy({
-                    hook: "writeBundle",
-                    targets: [
-                        { src: "index.css", dest: "build" },
-                        { src: "index.d.ts", dest: "build" },
-                        { src: "tailwind.config.js", dest: "build" },
-                        { src: "postcss.config.js", dest: "build" }
-                    ],
-                }),
-            ]
+            // plugins: [
+            //     copy({
+            //         hook: "writeBundle",
+            //         targets: [
+            //             { src: "theme.css", dest: "build", rename: "ui-kit-theme.css" },
+            //             { src: "index.d.ts", dest: "build" },
+            //             { src: "tailwind.config.js", dest: "build" },
+            //             { src: "postcss.config.js", dest: "build" }
+            //         ],
+            //     }),
+            // ],
+            output: {
+                assetFileNames: (asset) => {
+                    if (asset.names?.includes("style.css")) {
+                        return `ui-kit-lib.css`;
+                    }
+                    return `[name][hash][extname]`
+                },
+            }
         },
     },
     test: {

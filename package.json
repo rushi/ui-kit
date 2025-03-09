@@ -9,24 +9,25 @@
   },
   "type": "module",
   "main": "build/ui-kit.js",
-  "types": "build/index.d.ts",
+  "types": "index.d.ts",
   "files": [
-    "build/**"
+    "index.d.ts",
+    "theme.css",
+    "tailwind.config.js",
+    "postcss.config.js",
+    "ui-kit-lib.css",
+    "ui-kit.js"
   ],
   "exports": {
-    ".": {
-      "import": {
-        "types": "./build/index.d.ts",
-        "default": "./build/ui-kit.js"
-      }
-    },
-    "./tailwind.config": "./build/tailwind.config.js",
-    "./postcss.config": "./build/postcss.config.js",
-    "./index.css": "./build/index.css",
-    "./style.css": "./build/style.css"
+    ".": "./build/ui-kit.js",
+    "./tailwind.config": "./tailwind.config.js",
+    "./postcss.config": "./postcss.config.js",
+    "./ui-kit-theme.css": "./theme.css",
+    "./ui-kit-lib.css": "./build/ui-kit-lib.css"
   },
   "scripts": {
-    "prepare": "npx vite build",
+    "prepack": "npm run build --prepack",
+    "prepublishOnly": "npm run build --prepublishOnly",
     "build": "npx vite build",
     "ci": "npx vite build",
     "dev": "storybook dev -p 6006 --no-open",
@@ -41,6 +42,7 @@
   "dependencies": {
     "@headlessui/react": "1.6",
     "@radix-ui/react-tooltip": "^1.1.7",
+    "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.6",
     "@tippyjs/react": "^4.2.6",
     "clsx": "^1.2.1",

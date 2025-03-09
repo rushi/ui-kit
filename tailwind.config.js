@@ -1,5 +1,6 @@
 import forms from "@tailwindcss/forms";
 import animate from "tailwindcss-animate";
+import containerQueries from "@tailwindcss/container-queries";
 
 const colors = {
     transparent: "transparent",
@@ -229,5 +230,5 @@ export default {
         },
     },
 
-    plugins: [forms, animate],
+    plugins: [forms, containerQueries, animate],
 };

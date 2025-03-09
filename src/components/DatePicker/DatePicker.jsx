@@ -3,7 +3,6 @@ import { isArray, isFunction } from "lodash-es";
 import PropTypes from "prop-types";
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import ReactDayPicker from "react-day-picker";
-import "react-day-picker/lib/style.css";
 import { Tooltip } from "../Tooltip";
 import cn from "../../helpers/classnames";
 import { isSame, isValidTimeZoneName, now, toDate } from "../../utils/date";
@@ -190,13 +189,13 @@ export const DatePicker = ({
     const CaptionElement = useMemo(() => {
         return shouldShowYearPicker && currentMonth
             ? ({ date }) => (
-                  <MonthYearSelector
-                      date={date}
-                      currentMonth={currentMonth}
-                      locale={locale ?? contextLocale}
-                      onChange={handleMonthChange}
-                  />
-              )
+                <MonthYearSelector
+                    date={date}
+                    currentMonth={currentMonth}
+                    locale={locale ?? contextLocale}
+                    onChange={handleMonthChange}
+                />
+            )
             : undefined;
         // Adding `handleMonthChange` causes a lot of re-renders, and closes drop-down.
         // eslint-disable-next-line react-hooks/exhaustive-deps
