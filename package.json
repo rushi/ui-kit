@@ -14,22 +14,14 @@
     "build/**"
   ],
   "exports": {
-    "./tailwind.config": {
-      "import": {
-        "default": "./build/tailwind.config.js"
-      }
-    },
-    "./postcss.config": {
-      "import": {
-        "default": "./build/postcss.config.js"
-      }
-    },
     ".": {
       "import": {
         "types": "./build/index.d.ts",
         "default": "./build/ui-kit.js"
       }
     },
+    "./tailwind.config": "./build/tailwind.config.js",
+    "./postcss.config": "./build/postcss.config.js",
     "./index.css": "./build/index.css",
     "./style.css": "./build/style.css"
   },
