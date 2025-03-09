@@ -1,132 +1,144 @@
 {
-    "name": "@xola/ui-kit",
-    "version": "3.0.16",
-    "description": "Xola UI Kit",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/xola/ui-kit.git"
+  "name": "@xola/ui-kit",
+  "version": "3.0.16",
+  "description": "Xola UI Kit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xola/ui-kit.git"
+  },
+  "main": "build/ui-kit.js",
+  "module": "build/ui-kit.mjs",
+  "types": "build/index.d.ts",
+  "files": [
+    "build/**"
+  ],
+  "exports": {
+    "./tailwind.config": {
+      "require": {
+        "default": "./build/tailwind.config.cjs"
+      },
+      "import": {
+        "default": "./build/tailwind.config.mjs"
+      }
     },
-    "main": "build/ui-kit.js",
-    "module": "build/ui-kit.mjs",
-    "types": "build/index.d.ts",
-    "files": [
-        "build/**"
-    ],
-    "exports": {
-        "./tailwind.config": {
-            "require": {
-                "default": "./build/tailwind.config.cjs"
-            },
-            "import": {
-                "default": "./build/tailwind.config.mjs"
-            }
-        },
-        "./postcss.config": {
-            "require": {
-                "default": "./build/postcss.config.cjs"
-            },
-            "import": {
-                "default": "./build/postcss.config.js"
-            }
-        },
-        ".": {
-            "require": {
-                "types": "./build/index.d.ts",
-                "default": "./build/ui-kit.js"
-            },
-            "import": {
-                "types": "./build/index.d.ts",
-                "default": "./build/ui-kit.mjs"
-            }
-        },
-        "./checkout": {
-            "require": {
-                "types": "./build/index.d.ts",
-                "default": "./build/checkout.js"
-            },
-            "import": {
-                "types": "./build/index.d.ts",
-                "default": "./build/checkout.mjs"
-            }
-        },
-        "./index.css": "./build/index.css",
-        "./style.css": "./build/style.css"
+    "./postcss.config": {
+      "require": {
+        "default": "./build/postcss.config.cjs"
+      },
+      "import": {
+        "default": "./build/postcss.config.js"
+      }
     },
-    "scripts": {
-        "prepare": "npm run build",
-        "build": "npm run generateConfig && vite build",
-        "ci": "npm run build",
-        "generateConfig": "node scripts/generateConfig.js",
-        "clean": "rm -rf node_modules/.vite",
-        "lint": "xola-lint src",
-        "lint:fix": "xola-lint src --fix",
-        "lint:report": "xola-lint src --reporter=json src > eslint_report.json",
-        "format": "prettier -l --write src",
-        "test": "vitest run"
+    ".": {
+      "require": {
+        "types": "./build/index.d.ts",
+        "default": "./build/ui-kit.js"
+      },
+      "import": {
+        "types": "./build/index.d.ts",
+        "default": "./build/ui-kit.mjs"
+      }
     },
-    "dependencies": {
-        "@headlessui/react": "1.6",
-        "@radix-ui/react-tooltip": "^1.1.7",
-        "@tailwindcss/forms": "^0.5.6",
-        "@tippyjs/react": "^4.2.6",
-        "clsx": "^1.2.1",
-        "dayjs": "^1.11.13",
-        "downshift": "^6.1.12",
-        "get-user-locale": "^2.3.2",
-        "google-libphonenumber": "^3.2.40",
-        "lodash-es": "^4.17.21",
-        "nouislider-react": "^3.4.2",
-        "react": "^18.3.1",
-        "react-day-picker": "^7.4.10",
-        "react-dom": "^18.3.1",
-        "react-hot-toast": "^2.4.1",
-        "react-hotkeys-hook": "^3.4.7",
-        "react-select": "^5.8.1",
-        "react-textarea-autosize": "^8.5.3",
-        "tailwind-merge": "^2.5.5",
-        "tailwindcss-animate": "^1.0.7",
-        "tippy.js": "^6.3.7"
+    "./checkout": {
+      "require": {
+        "types": "./build/index.d.ts",
+        "default": "./build/checkout.js"
+      },
+      "import": {
+        "types": "./build/index.d.ts",
+        "default": "./build/checkout.mjs"
+      }
     },
-    "devDependencies": {
-        "@babel/core": "^7.14.8",
-        "@babel/preset-env": "^7.15.6",
-        "@types/react": "^18.3.8",
-        "@types/react-dom": "^18.3.0",
-        "@xola/jslint": "^3.0.1",
-        "autoprefixer": "^10.4.20",
-        "babel-loader": "^8.2.2",
-        "chromatic": "^6.11.4",
-        "knip": "^5.43.3",
-        "postcss": "8.4",
-        "prettier": "^3.3.3",
-        "prop-types": "^15.8.1",
-        "rollup-plugin-copy": "^3.5.0",
-        "tailwindcss": "3.4",
-        "typescript": "4.7",
-        "vite": "5.4",
-        "vitest": "^2.1.1"
-    },
-    "peerDependencies": {
-        "@types/react": "^18.2.22",
-        "@types/react-dom": "^18.2.7",
-        "autoprefixer": "^10.3.1",
-        "postcss": "8.4",
-        "tailwindcss": "3.4",
-        "vite": "5.4"
-    },
-    "engines": {
-        "node": ">=18"
-    },
-    "prettier": {
-        "semi": true,
-        "printWidth": 120,
-        "trailingComma": "all",
-        "singleQuote": false,
-        "bracketSpacing": true,
-        "useTabs": false,
-        "arrowParens": "always",
-        "bracketSameLine": false,
-        "tabWidth": 4
-    }
+    "./index.css": "./build/index.css",
+    "./style.css": "./build/style.css"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "npm run generateConfig && vite build",
+    "ci": "npm run build",
+    "generateConfig": "node scripts/generateConfig.js",
+    "clean": "rm -rf node_modules/.vite",
+    "lint": "xola-lint src",
+    "lint:fix": "xola-lint src --fix",
+    "lint:report": "xola-lint src --reporter=json src > eslint_report.json",
+    "format": "prettier -l --write src",
+    "test": "vitest run",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@headlessui/react": "1.6",
+    "@radix-ui/react-tooltip": "^1.1.7",
+    "@tailwindcss/forms": "^0.5.6",
+    "@tippyjs/react": "^4.2.6",
+    "clsx": "^1.2.1",
+    "dayjs": "^1.11.13",
+    "downshift": "^6.1.12",
+    "get-user-locale": "^2.3.2",
+    "google-libphonenumber": "^3.2.40",
+    "lodash-es": "^4.17.21",
+    "nouislider-react": "^3.4.2",
+    "react": "^18.3.1",
+    "react-day-picker": "^7.4.10",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-hotkeys-hook": "^3.4.7",
+    "react-select": "^5.8.1",
+    "react-textarea-autosize": "^8.5.3",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "tippy.js": "^6.3.7"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.6",
+    "@chromatic-com/storybook": "^3.2.5",
+    "@storybook/addon-essentials": "^8.6.4",
+    "@storybook/addon-onboarding": "^8.6.4",
+    "@storybook/blocks": "^8.6.4",
+    "@storybook/experimental-addon-test": "^8.6.4",
+    "@storybook/react": "^8.6.4",
+    "@storybook/react-vite": "^8.6.4",
+    "@storybook/test": "^8.6.4",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
+    "@vitest/browser": "^2.1.9",
+    "@vitest/coverage-v8": "^2.1.9",
+    "@xola/jslint": "^3.0.1",
+    "autoprefixer": "^10.4.20",
+    "chromatic": "^6.11.4",
+    "knip": "^5.43.3",
+    "playwright": "^1.51.0",
+    "postcss": "8.4",
+    "prettier": "^3.3.3",
+    "prop-types": "^15.8.1",
+    "rollup-plugin-copy": "^3.5.0",
+    "storybook": "^8.6.4",
+    "tailwindcss": "3.4",
+    "typescript": "4.7",
+    "vite": "5.4",
+    "vitest": "^2.1.1"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "autoprefixer": "^10.3.1",
+    "postcss": "8.4",
+    "tailwindcss": "3.4",
+    "vite": "5.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "prettier": {
+    "semi": true,
+    "printWidth": 120,
+    "trailingComma": "all",
+    "singleQuote": false,
+    "bracketSpacing": true,
+    "useTabs": false,
+    "arrowParens": "always",
+    "bracketSameLine": false,
+    "tabWidth": 4
+  }
 }

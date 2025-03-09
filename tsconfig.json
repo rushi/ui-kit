@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "ES2022",
+        "useDefineForClassFields": true,
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext",
+            "dom"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": false,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "isolatedModules": false,
+        "outDir": "build",
+        "emitDeclarationOnly": true,
+        "declaration": true,
+        "sourceMap": false,
+        "jsx": "react",
+        "types": [
+            "vite/client",
+            "node"
+        ]
+    },
+    "include": [
+        "./src"
+    ],
+    "exclude": [
+        "./src/stories"
+    ]
+}

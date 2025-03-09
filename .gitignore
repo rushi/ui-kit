@@ -9,3 +9,5 @@ storybook-static
 src/theme.js
 .idea
 .vscode
+
+*storybook.log
