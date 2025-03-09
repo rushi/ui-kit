@@ -7,6 +7,7 @@ const dependencies = Object.keys(pkg.dependencies);
 const devDependencies = Object.keys(pkg.devDependencies);
 
 export default defineConfig({
+    assetsInclude: ["README.md"],
     build: {
         outDir: "build",
         minify: false,

@@ -54,7 +54,6 @@
     "./style.css": "./build/style.css"
   },
   "scripts": {
-    "prepare": "npm run build",
     "build": "npm run generateConfig && vite build",
     "ci": "npm run build",
     "generateConfig": "node scripts/generateConfig.js",
@@ -64,7 +63,7 @@
     "lint:report": "xola-lint src --reporter=json src > eslint_report.json",
     "format": "prettier -l --write src",
     "test": "vitest run",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
   "dependencies": {
