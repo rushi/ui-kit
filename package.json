@@ -54,20 +54,16 @@
         "./style.css": "./build/style.css"
     },
     "scripts": {
-        "start": "./scripts/storybook",
-        "dev": "./scripts/storybook start --no-manager-cache",
         "prepare": "npm run build",
         "build": "npm run generateConfig && vite build",
         "ci": "npm run build",
-        "build:storybook": "npm run build && ./scripts/storybook build",
         "generateConfig": "node scripts/generateConfig.js",
         "clean": "rm -rf node_modules/.vite",
         "lint": "xola-lint src",
         "lint:fix": "xola-lint src --fix",
         "lint:report": "xola-lint src --reporter=json src > eslint_report.json",
         "format": "prettier -l --write src",
-        "test": "vitest run",
-        "chromatic": "chromatic --exit-zero-on-changes --build-script-name build:storybook"
+        "test": "vitest run"
     },
     "dependencies": {
         "@headlessui/react": "1.6",
@@ -95,15 +91,6 @@
     "devDependencies": {
         "@babel/core": "^7.14.8",
         "@babel/preset-env": "^7.15.6",
-        "@storybook/addon-actions": "^6.5.10",
-        "@storybook/addon-essentials": "^6.5.10",
-        "@storybook/addon-links": "^6.5.10",
-        "@storybook/addon-postcss": "^2.0.0",
-        "@storybook/addons": "^6.5.10",
-        "@storybook/builder-webpack5": "^6.5.16",
-        "@storybook/manager-webpack5": "^6.5.16",
-        "@storybook/react": "^6.5.10",
-        "@storybook/theming": "^6.5.10",
         "@types/react": "^18.3.8",
         "@types/react-dom": "^18.3.0",
         "@xola/jslint": "^3.0.1",
@@ -115,8 +102,6 @@
         "prettier": "^3.3.3",
         "prop-types": "^15.8.1",
         "rollup-plugin-copy": "^3.5.0",
-        "storybook-addon-designs": "^6.3.1",
-        "storybook-css-modules-preset": "^1.1.1",
         "tailwindcss": "3.4",
         "typescript": "4.7",
         "vite": "5.4",
