@@ -1,7 +1,13 @@
-.idea
 .github
+.idea
+.storybook
+.vscode
 git_ignore
 node_modules
-package.json
 package-lock.json
+package.json
+scripts
+src/icons/build
+src/icons/node_modules
 src/theme.js
+storybook-static

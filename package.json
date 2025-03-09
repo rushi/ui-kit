@@ -7,56 +7,34 @@
     "type": "git",
     "url": "git+https://github.com/xola/ui-kit.git"
   },
+  "type": "module",
   "main": "build/ui-kit.js",
-  "module": "build/ui-kit.mjs",
   "types": "build/index.d.ts",
   "files": [
     "build/**"
   ],
   "exports": {
     "./tailwind.config": {
-      "require": {
-        "default": "./build/tailwind.config.cjs"
-      },
       "import": {
-        "default": "./build/tailwind.config.mjs"
+        "default": "./build/tailwind.config.js"
       }
     },
     "./postcss.config": {
-      "require": {
-        "default": "./build/postcss.config.cjs"
-      },
       "import": {
         "default": "./build/postcss.config.js"
       }
     },
     ".": {
-      "require": {
+      "import": {
         "types": "./build/index.d.ts",
         "default": "./build/ui-kit.js"
-      },
-      "import": {
-        "types": "./build/index.d.ts",
-        "default": "./build/ui-kit.mjs"
-      }
-    },
-    "./checkout": {
-      "require": {
-        "types": "./build/index.d.ts",
-        "default": "./build/checkout.js"
-      },
-      "import": {
-        "types": "./build/index.d.ts",
-        "default": "./build/checkout.mjs"
       }
     },
     "./index.css": "./build/index.css",
     "./style.css": "./build/style.css"
   },
   "scripts": {
-    "build": "npm run generateConfig && vite build",
     "ci": "npm run build",
-    "generateConfig": "node scripts/generateConfig.js",
     "clean": "rm -rf node_modules/.vite",
     "lint": "xola-lint src",
     "lint:fix": "xola-lint src --fix",

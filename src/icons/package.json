@@ -7,8 +7,7 @@
         "type": "git",
         "url": "git://github.com/xola/ui-kit.git"
     },
-    "main": "build/icons.cjs",
-    "module": "build/icons.js",
+    "main": "build/icons.js",
     "types": "index.d.ts",
     "files": [
         "build/**",
@@ -16,9 +15,6 @@
     ],
     "exports": {
         ".": {
-            "require": {
-                "default": "./build/icons.cjs"
-            },
             "import": {
                 "default": "./build/icons.js"
             },

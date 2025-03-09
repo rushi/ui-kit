@@ -15,7 +15,7 @@ export default defineConfig({
             },
             name: "XolaIcons",
             // fileName: (format) => `icons.${format}.js`,
-            formats: ["es", "cjs"],
+            formats: ["es"],
         },
 
         rollupOptions: {
