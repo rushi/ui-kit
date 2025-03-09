@@ -15,9 +15,7 @@
     ],
     "exports": {
         ".": {
-            "import": {
-                "default": "./build/icons.js"
-            },
+            "import": "./build/icons.js",
             "types": "./index.d.ts"
         }
     },

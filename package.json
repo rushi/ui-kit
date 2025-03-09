@@ -34,6 +34,7 @@
     "./style.css": "./build/style.css"
   },
   "scripts": {
+    "dev": "storybook dev -p 6006 --no-open",
     "ci": "npm run build",
     "clean": "rm -rf node_modules/.vite",
     "lint": "xola-lint src",
@@ -41,7 +42,6 @@
     "lint:report": "xola-lint src --reporter=json src > eslint_report.json",
     "format": "prettier -l --write src",
     "test": "vitest run",
-    "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
   "dependencies": {

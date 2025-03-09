@@ -10,9 +10,7 @@ export default defineConfig({
         outDir: "build",
 
         lib: {
-            entry: {
-                icons: path.resolve(__dirname, "./index.js"),
-            },
+            entry: path.resolve(__dirname, "./index.js"),
             name: "XolaIcons",
             // fileName: (format) => `icons.${format}.js`,
             formats: ["es"],
