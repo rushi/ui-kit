@@ -23,7 +23,7 @@ const meta: Meta<typeof Switch> = {
         size: {
             description: "Switch Size",
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "medium" },
             },
             options: ["small", "medium", "large"],

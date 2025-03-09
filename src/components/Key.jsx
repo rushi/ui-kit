@@ -3,7 +3,7 @@ import React from "react";
 import cn from "../helpers/classnames";
 import { isOSX } from "../helpers/browser";
 
-export const Key = ({ char, className, ...rest }) => {
+export const Key = ({ char, className = "", ...rest }) => {
     const key = keyMap[char] ?? char;
 
     return (

@@ -1,14 +1,13 @@
-import clsx from "clsx";
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { ComboBox, Currency, FormGroup, Label } from "../../";
+import React from "react";
+import { ComboBox, FormGroup, Label } from "../../";
 
 const meta: Meta<typeof ComboBox> = {
     title: "Forms & Fields/ComboBox",
     args: {
-        isCreatable: "boolean",
-        isMulti: "boolean",
-        closeMenuOnSelect: "boolean",
+        isCreatable: true,
+        isMulti: true,
+        closeMenuOnSelect: false,
     },
     argTypes: {
         isCreatable: {

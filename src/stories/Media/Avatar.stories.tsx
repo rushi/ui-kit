@@ -34,7 +34,7 @@ const meta: Meta<typeof Avatar> = {
     argTypes: {
         name: {
             description: "A user's full name",
-            type: { required: true },
+            required: true,
             control: { type: "text" },
             table: {
                 type: { summary: "example: John Doe" },

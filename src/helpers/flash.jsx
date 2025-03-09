@@ -29,13 +29,13 @@ const defaultProps = {
  * React Hot Toast https://react-hot-toast.com/docs
  */
 export const flash = {
-    show({ text, size = "medium", color = "success", className, canClose = true, onClose, ...rest }) {
+    show({ text, size = "medium", color = "success", className = "", canClose = true, onClose, ...rest }) {
         const finalProps = { ...defaultProps, ...rest };
         if (!canClose) {
             finalProps.duration = Number.POSITIVE_INFINITY;
         }
 
-        const classNames = flash.getStyles(color, size, className, canClose);
+        const classNames = flash.getStyles(color, size, (className = ""), canClose);
         return toast.custom(flash.container.bind(this, text, classNames, canClose ? onClose : null), finalProps);
     },
 
@@ -70,7 +70,7 @@ export const flash = {
         return cn("flex text-white rounded pointer-events-auto", colors[color], sizes[size], className);
     },
 
-    container(text, className, onClose, toastObject) {
+    container(text, className = "", onClose, toastObject) {
         const onCloseWrapper = (event) => onClose(event, toastObject);
 
         return (

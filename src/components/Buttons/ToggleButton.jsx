@@ -14,7 +14,7 @@ const colors = {
     },
 };
 
-export const ToggleButton = ({ color = "primary", variant = "outline", isActive, className, ...rest }) => {
+export const ToggleButton = ({ color = "primary", variant = "outline", isActive, className = "", ...rest }) => {
     return (
         <Button
             color={color}

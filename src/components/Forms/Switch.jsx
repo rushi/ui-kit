@@ -66,7 +66,7 @@ Switch.Group.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-Switch.Label = ({ direction = "left", className, children }) => {
+Switch.Label = ({ direction = "left", className = "", children }) => {
     return (
         <HeadlessSwitch.Label
             as="span"

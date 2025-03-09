@@ -17,7 +17,7 @@ const sizes = {
     large: "h-2 w-2",
 };
 
-export const Dot = ({ color = "primary", size = "medium", className, ...rest }) => {
+export const Dot = ({ color = "primary", size = "medium", className = "", ...rest }) => {
     return (
         <span
             className={cn("ui-dot", "inline-block rounded-full text-white", colors[color], sizes[size], className)}

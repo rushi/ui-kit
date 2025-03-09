@@ -21,10 +21,10 @@ const sizes = {
     current: "w-[1em] h-[1em]", // TODO: Consider setting this as the default value.
 };
 
-export const Spinner = ({ className, size = "small", color = "secondary", ...rest }) => {
+export const Spinner = ({ className = "", size = "small", color = "secondary", ...rest }) => {
     return (
         <CircleNotch
-            className={cn("ui-spinner", className, sizes[size], colors[color], "inline-block animate-spin")}
+            className={cn("ui-spinner", (className = ""), sizes[size], colors[color], "inline-block animate-spin")}
             {...rest}
         />
     );

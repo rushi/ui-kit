@@ -4,7 +4,7 @@ import cn from "./classnames";
 import { iconSizes } from "./iconSizes";
 
 export const createIcon = (Icon) => {
-    const IconContainer = ({ size = "small", className, ...rest }) => {
+    const IconContainer = ({ size = "small", className = "", ...rest }) => {
         return <Icon className={cn(iconSizes[size], "relative -top-0.25 inline-block", className)} {...rest} />;
     };
 

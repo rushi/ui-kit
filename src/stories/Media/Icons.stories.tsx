@@ -35,7 +35,7 @@ const meta: Meta = {
         color: {
             description: "Colors",
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "text-black" },
             },
             options: colors,

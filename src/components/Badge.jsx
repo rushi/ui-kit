@@ -25,7 +25,7 @@ const iconSizes = {
     large: "w-5 h-5 mr-1.5",
 };
 
-export const Badge = ({ color = "primary", size = "small", icon, className, children, ...rest }) => {
+export const Badge = ({ color = "primary", size = "small", icon = null, className = "", children, ...rest }) => {
     return (
         <span
             className={cn(

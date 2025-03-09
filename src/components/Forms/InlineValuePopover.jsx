@@ -11,7 +11,7 @@ export const InlineValuePopover = ({
     autoSelectOnClick = false,
     onClick,
     onClickOutside,
-    classNames,
+    classNames = {},
     children,
     error = null,
     ...rest

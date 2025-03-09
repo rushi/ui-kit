@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { SubmitButton } from "../../";
+import { SubmitButton as SubmitButtonComponent } from "../../";
 
 const SubmitButtonStories = {
     title: "Forms & Fields/Buttons/Submit Button",
-    component: SubmitButton,
+    component: SubmitButtonComponent,
     args: {
         isLoading: false,
         size: "medium",
@@ -33,7 +33,7 @@ const SubmitButtonStories = {
     },
 };
 
-export const Default = ({ isLoading, ...rest }) => {
+export const SubmitButton = ({ isLoading, ...rest }) => {
     const [showLoading, setShowLoading] = useState(isLoading);
     const [showSuccess, setShowSuccess] = useState(false);
 
@@ -48,16 +48,16 @@ export const Default = ({ isLoading, ...rest }) => {
     return (
         <div className="space-y-4">
             <div className="space-x-4">
-                <SubmitButton isLoading={showLoading} isSuccess={showSuccess} {...rest} onClick={handleClick}>
+                <SubmitButtonComponent isLoading={showLoading} isSuccess={showSuccess} {...rest} onClick={handleClick}>
                     Submit
-                </SubmitButton>
+                </SubmitButtonComponent>
 
-                <SubmitButton isLoading={showLoading} isSuccess={showSuccess} {...rest} onClick={handleClick}>
+                <SubmitButtonComponent isLoading={showLoading} isSuccess={showSuccess} {...rest} onClick={handleClick}>
                     Button with really long text
-                </SubmitButton>
+                </SubmitButtonComponent>
             </div>
             <div className="space-x-4">
-                <SubmitButton
+                <SubmitButtonComponent
                     {...rest}
                     color="success"
                     isLoading={showLoading}
@@ -65,9 +65,9 @@ export const Default = ({ isLoading, ...rest }) => {
                     onClick={handleClick}
                 >
                     Submit
-                </SubmitButton>
+                </SubmitButtonComponent>
 
-                <SubmitButton
+                <SubmitButtonComponent
                     {...rest}
                     color="success"
                     isSuccess={showSuccess}
@@ -75,10 +75,10 @@ export const Default = ({ isLoading, ...rest }) => {
                     onClick={handleClick}
                 >
                     Button with really long text
-                </SubmitButton>
+                </SubmitButtonComponent>
             </div>
             <div className="space-x-4">
-                <SubmitButton
+                <SubmitButtonComponent
                     {...rest}
                     isSuccess={showSuccess}
                     color="danger"
@@ -86,9 +86,9 @@ export const Default = ({ isLoading, ...rest }) => {
                     onClick={handleClick}
                 >
                     Submit
-                </SubmitButton>
+                </SubmitButtonComponent>
 
-                <SubmitButton
+                <SubmitButtonComponent
                     {...rest}
                     isSuccess={showSuccess}
                     color="danger"
@@ -96,7 +96,7 @@ export const Default = ({ isLoading, ...rest }) => {
                     onClick={handleClick}
                 >
                     Button with really long text
-                </SubmitButton>
+                </SubmitButtonComponent>
             </div>
         </div>
     );

@@ -15,7 +15,7 @@ const meta: Meta<typeof Key> = {
     argTypes: {
         char: {
             description: "Character t show",
-            type: { required: true },
+            required: true,
             control: { type: "text" },
             table: {
                 type: { summary: "example: K" },

@@ -41,7 +41,7 @@ const meta: Meta = {
         color: {
             description: "Colors",
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "text-black" },
             },
             options: colors,
@@ -81,7 +81,7 @@ const ImageList = ({ color }) => {
 };
 
 export const Default = ({ color }) => {
-    return <ImageList color={color} size="large" />;
+    return <ImageList color={color} />;
 };
 
 export const XolaLogos = () => {

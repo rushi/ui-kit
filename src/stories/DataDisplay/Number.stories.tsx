@@ -13,14 +13,14 @@ const meta: Meta<typeof Number> = {
         },
     },
     args: {
-        amount: 109_482.84,
+        children: 109482.84,
         locale: "en-US",
-        removeTrailingZeroes: true,
+        maximumFractionDigits: 2,
     },
     argTypes: {
-        amount: {
+        children: {
             description: "A number",
-            type: { required: true },
+            required: true,
             control: { type: "number" },
             table: {
                 type: { summary: "For demo only" },
@@ -28,11 +28,11 @@ const meta: Meta<typeof Number> = {
         },
         locale: {
             description: "A locale string",
-            type: { required: true },
+            required: true,
             control: { type: "select" },
             options: ["en-IN", "en-US", "fr-FR", "ja-JP", "de-DE", "ar-AE"],
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "Auto-detected based on browser settings" },
             },
         },
@@ -42,7 +42,7 @@ const meta: Meta<typeof Number> = {
 export default meta;
 type Story = StoryObj<typeof Number>;
 
-export const Default = ({ locale, amount }) => {
+export const Default = ({ locale, children }) => {
     return (
         <div>
             <div className="mb-2">
@@ -52,7 +52,7 @@ export const Default = ({ locale, amount }) => {
                 </a>{" "}
                 API
             </div>
-            <Number locale={locale}>{amount}</Number>
+            <Number locale={locale}>{children}</Number>
         </div>
     );
 };

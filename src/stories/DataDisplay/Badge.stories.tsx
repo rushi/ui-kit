@@ -1,5 +1,5 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 import { Badge } from "../..";
 import { BellIcon, BoxIcon, CakeIcon, CashIcon, EditIcon, StackIcon } from "../../icons/index.js";
 
@@ -7,7 +7,7 @@ const meta: Meta<typeof Badge> = {
     title: "Data Display/Badges",
     component: Badge,
     args: {
-        text: "Default",
+        children: "Default",
         color: "primary",
         size: "small",
     },
@@ -19,8 +19,8 @@ const meta: Meta<typeof Badge> = {
         },
     },
     argTypes: {
-        text: {
-            type: { required: true },
+        children: {
+            required: true,
             control: { type: "text" },
         },
         color: {
@@ -37,69 +37,83 @@ const meta: Meta<typeof Badge> = {
 export default meta;
 type Story = StoryObj<typeof Badge>;
 
-export const Default = ({ text = "Default", color, size, className }) => {
+export const Default = (props) => {
     return (
         <div className="space-x-4">
-            <Badge className={className} color={color} size={size}>
-                {text}
-            </Badge>
+            <Badge {...props} />
         </div>
     );
 };
 
-export const WithIcons = () => {
+export const WithIcons = (props) => {
     return (
         <div className="grid grid-cols-5 gap-4">
-            <Badge color="primary" icon={<StackIcon />}>
+            <Badge {...props} color="primary" icon={<StackIcon />}>
                 Primary
             </Badge>
-            <Badge color="secondary" icon={<EditIcon />}>
+            <Badge {...props} color="secondary" icon={<EditIcon />}>
                 Secondary
             </Badge>
-            <Badge color="success" icon={<BoxIcon />}>
+            <Badge {...props} color="success" icon={<BoxIcon />}>
                 Success
             </Badge>
-            <Badge color="warning" icon={<BellIcon />}>
+            <Badge {...props} color="warning" icon={<BellIcon />}>
                 Warning
             </Badge>
-            <Badge color="caution" icon={<CashIcon />}>
+            <Badge {...props} color="caution" icon={<CashIcon />}>
                 Caution
             </Badge>
-            <Badge color="danger" icon={<CakeIcon />}>
+            <Badge {...props} color="danger" icon={<CakeIcon />}>
                 Danger
             </Badge>
-            <Badge color="critical" icon={<StackIcon />}>
+            <Badge {...props} color="critical" icon={<StackIcon />}>
                 Critical
             </Badge>
         </div>
     );
 };
 
-export const Colors = () => {
+export const Colors = (props) => {
     return (
         <div className="space-x-4">
-            <Badge color="primary">Primary</Badge>
-            <Badge color="secondary">Secondary</Badge>
-            <Badge color="success">Success</Badge>
-            <Badge color="warning">Warning</Badge>
-            <Badge color="caution">Caution</Badge>
-            <Badge color="danger">Danger</Badge>
-            <Badge color="problem">Problem</Badge>
-            <Badge color="critical">Critical</Badge>
+            <Badge {...props} color="primary">
+                Primary
+            </Badge>
+            <Badge {...props} color="secondary">
+                Secondary
+            </Badge>
+            <Badge {...props} color="success">
+                Success
+            </Badge>
+            <Badge {...props} color="warning">
+                Warning
+            </Badge>
+            <Badge {...props} color="caution">
+                Caution
+            </Badge>
+            <Badge {...props} color="danger">
+                Danger
+            </Badge>
+            <Badge {...props} color="problem">
+                Problem
+            </Badge>
+            <Badge {...props} color="critical">
+                Critical
+            </Badge>
         </div>
     );
 };
 
-export const AllSizes = () => {
+export const AllSizes = (props) => {
     return (
         <div className="space-x-4">
-            <Badge size="small">Small</Badge>
-
-            <Badge size="medium" icon={<StackIcon />}>
+            <Badge {...props} size="small">
+                Small
+            </Badge>
+            <Badge {...props} size="medium" icon={<StackIcon />}>
                 A Medium One
             </Badge>
-
-            <Badge size="large" icon={<EditIcon />}>
+            <Badge {...props} size="large" icon={<EditIcon />}>
                 A Large One
             </Badge>
         </div>

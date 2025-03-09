@@ -20,7 +20,7 @@ const meta: Meta<typeof Modal> = {
     },
     argTypes: {
         size: {
-            type: { required: false },
+            required: false,
             options: ["small", "medium", "large", "huge"],
             control: { type: "select" },
             table: {
@@ -28,7 +28,7 @@ const meta: Meta<typeof Modal> = {
             },
         },
         position: {
-            type: { required: false },
+            required: false,
             options: ["topLeft", "topRight", "center", "bottomLeft", "bottomRight"],
             control: { type: "select" },
             table: {
@@ -36,12 +36,12 @@ const meta: Meta<typeof Modal> = {
             },
         },
         shouldCloseOnOutsideClick: {
-            type: { required: false },
+            required: false,
             description: "Close the modal if user clicks outside it",
             control: { type: "boolean" },
         },
         isOpen: {
-            type: { required: false },
+            required: false,
             description: "Control the modal open state",
             control: { type: "boolean" },
         },

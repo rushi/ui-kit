@@ -21,15 +21,15 @@ const meta: Meta<typeof Breadcrumb> = {
             description: "Spacing between elements",
             control: { type: "number" },
             table: {
-                defaultValue: { summary: 2 },
-                type: { summary: null },
+                defaultValue: { summary: "2" },
+                type: { summary: undefined },
             },
         },
         separator: {
             description: "The string that separates the items",
             control: { type: "text" },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "/" },
             },
         },

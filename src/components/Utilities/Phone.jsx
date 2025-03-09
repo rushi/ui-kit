@@ -3,7 +3,7 @@ import React from "react";
 import cn from "../../helpers/classnames";
 import { formatPhoneNumber, getRegionCode } from "../../utils/phone";
 
-export const Phone = ({ countryCode = "US", className, children }) => {
+export const Phone = ({ countryCode = "US", className = "", children }) => {
     const number = children;
     const formattedNumber = formatPhoneNumber(number, countryCode);
     const regionCode = getRegionCode(number, countryCode);

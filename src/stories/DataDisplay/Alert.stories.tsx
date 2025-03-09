@@ -1,5 +1,6 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
+import React from "react";
 import { Alert } from "../..";
 
 const meta: Meta<typeof Alert> = {
@@ -20,10 +21,11 @@ const meta: Meta<typeof Alert> = {
     args: {
         text: "Space, the final frontier. These are the voyages of the starship Enterprise. Its five year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before!",
         color: "primary",
+        onClose: fn(),
     },
     argTypes: {
         text: {
-            type: { required: false },
+            required: false,
             description: "The text in the component",
             control: { type: "text" },
             table: {
@@ -34,7 +36,7 @@ const meta: Meta<typeof Alert> = {
             options: ["primary", "success", "warning", "danger"],
             control: { type: "select" },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "primary" },
             },
         },
@@ -44,10 +46,10 @@ const meta: Meta<typeof Alert> = {
 export default meta;
 type Story = StoryObj<typeof Alert>;
 
-export const Default = ({ className, color, text = "Default" }) => {
+export const Default = ({ className, color, text = "Default", ...rest }) => {
     return (
         <div className="space-x-4">
-            <Alert className={className} color={color}>
+            <Alert {...rest} className={className} color={color}>
                 {text}
             </Alert>
         </div>

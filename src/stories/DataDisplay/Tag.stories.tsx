@@ -18,8 +18,8 @@ const meta: Meta<typeof Tag> = {
         },
     },
     argTypes: {
-        text: {
-            type: { required: true },
+        children: {
+            required: true,
             control: { type: "text" },
         },
         color: {
@@ -56,9 +56,9 @@ export const BookingTag = () => {
     );
 };
 
-export const SystemTag = () => {
+export const SystemTag = (props) => {
     return (
-        <Tag color="secondary" size="small">
+        <Tag {...props} color="secondary" size="small">
             You cannot remove this tag
         </Tag>
     );

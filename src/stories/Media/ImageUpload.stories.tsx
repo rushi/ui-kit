@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import { ImageUpload } from "../..";
+import { ImageUpload as ImageUploadComponent } from "../..";
 
-const meta: Meta<typeof ImageUpload> = {
+const meta: Meta<typeof ImageUploadComponent> = {
     title: "Media/Image Upload",
-    component: ImageUpload,
+    component: ImageUploadComponent,
     parameters: {
         docs: {
             description: {
@@ -21,18 +21,18 @@ const meta: Meta<typeof ImageUpload> = {
         size: "medium",
         maxSize: 5,
         hasDelete: true,
-        caption: "",
-        requirements: "",
+        caption: null,
+        requirements: null,
     },
     argTypes: {
         src: {
-            type: { required: true },
+            required: true,
             description: "The URL to the image",
             control: {
                 type: "text",
             },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "none" },
             },
         },
@@ -41,7 +41,7 @@ const meta: Meta<typeof ImageUpload> = {
             options: ["small", "medium", "large"],
             control: { type: "radio" },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "medium" },
             },
         },
@@ -49,14 +49,14 @@ const meta: Meta<typeof ImageUpload> = {
             description: "The caption to show on the upload button",
             control: { type: "text" },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "Upload New Photo" },
             },
         },
         isLoading: {
             control: { type: "boolean" },
             table: {
-                defaultValue: { summary: false },
+                defaultValue: { summary: "false" },
             },
         },
         maxSize: {
@@ -66,14 +66,14 @@ const meta: Meta<typeof ImageUpload> = {
         hasDelete: {
             control: { type: "boolean" },
             table: {
-                defaultValue: { summary: true },
+                defaultValue: { summary: "true" },
             },
         },
         requirements: {
             description: "The requirements for this image upload",
             control: { type: "text" },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "Check that image is in PNG or JPG format and does not exceed 5MB" },
             },
         },
@@ -81,9 +81,9 @@ const meta: Meta<typeof ImageUpload> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ImageUpload>;
+type Story = StoryObj<typeof ImageUploadComponent>;
 
-export const Default = ({
+export const ImageUpload = ({
     src: source,
     size = "small",
     maxSize,
@@ -113,7 +113,7 @@ export const Default = ({
     };
 
     return (
-        <ImageUpload
+        <ImageUploadComponent
             src={source_}
             size={size}
             isLoading={isLoading}

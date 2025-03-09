@@ -11,11 +11,11 @@ const meta: Meta<typeof Spinner> = {
     },
     argTypes: {
         color: {
-            type: { required: true },
+            required: true,
             options: ["primary", "secondary", "success", "warning", "danger", "caution", "current"],
             control: { type: "select" },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "secondary" },
             },
         },
@@ -23,7 +23,7 @@ const meta: Meta<typeof Spinner> = {
             options: ["small", "medium", "large", "current"],
             control: { type: "select" },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "small" },
             },
         },

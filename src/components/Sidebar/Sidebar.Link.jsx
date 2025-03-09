@@ -7,12 +7,12 @@ import { Dot } from "../Dot/Dot";
 export const SidebarLink = ({
     isActive = false,
     hasSubmenu = false,
-    icon: Icon,
-    info,
+    icon: Icon = null,
+    info = null,
     children,
-    isSubMenuItem,
-    align,
-    classNames,
+    isSubMenuItem = false,
+    align = "left",
+    classNames = {},
     ...rest
 }) => {
     const showInfo = !!info ? true : hasSubmenu;
@@ -65,7 +65,7 @@ SidebarLink.propTypes = {
     isSubMenuItem: PropTypes.bool,
 };
 
-export const SidebarSeparator = ({ className }) => {
+export const SidebarSeparator = ({ className = "" }) => {
     return <hr className={cn("mx-3 my-4 border-gray-lighter/20", className)} />;
 };
 

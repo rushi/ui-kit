@@ -22,7 +22,7 @@ const LeftDrawerCountStyle = {
 export const Sidebar = ({
     logo,
     children,
-    className,
+    className = "",
     footer,
     notifications,
     isFixed = true,

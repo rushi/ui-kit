@@ -23,12 +23,12 @@ const meta: Meta<typeof Counter> = {
 export default meta;
 type Story = StoryObj<typeof Counter>;
 
-export const Counters = () => {
+export const Counters = (props) => {
     return (
         <div className="space-x-4">
-            <Counter>0</Counter>
-            <Counter>10</Counter>
-            <Counter>999</Counter>
+            <Counter {...props}>0</Counter>
+            <Counter {...props}>10</Counter>
+            <Counter {...props}>999</Counter>
         </div>
     );
 };

@@ -21,32 +21,32 @@ const meta: Meta<typeof Table> = {
         "Table.Header": {
             description:
                 "The header for this table, equivalent to a `<th>` HTML tag. This should contain instances of `<Table.Row>`",
-            type: { required: true },
+            required: true,
             control: false,
         },
         "Table.Head": {
             description:
                 "The header for this table, equivalent to a `<th>` HTML tag. This should contain instances of `<Table.Row>`",
-            type: { required: true },
+            required: true,
             control: false,
         },
         "Table.Body": {
             description:
                 "The body for this table, equivalent to a `<tbody>` HTML tag. This should contain instances of `<Table.Row>`",
-            type: { required: true },
+            required: true,
             control: false,
         },
         "Table.Row": {
             description:
                 "Each row for this table, equivalent to a `<tr>` HTML tag. This should be nested with a `<Table.Head>` or `<Table.Body>`",
-            type: { required: true },
+            required: true,
             control: false,
         },
         "Table.Cell": {
             description:
                 "Each cell for this table, equivalent to a `<td>` HTML tag. This should be nested with a `<Table.Row>`",
-            type: { required: true },
-            control: { type: "string" },
+            required: true,
+            control: { type: "text" },
         },
     },
 };
@@ -54,9 +54,9 @@ const meta: Meta<typeof Table> = {
 export default meta;
 type Story = StoryObj<typeof Table>;
 
-export const Default = () => {
+export const Default = (props) => {
     return (
-        <Table>
+        <Table {...props}>
             <Table.Head>
                 <Table.Row>
                     <Table.Header>Name</Table.Header>

@@ -18,7 +18,7 @@ Table.propTypes = {
     className: PropTypes.string,
 };
 
-Table.Head = ({ className, ...rest }) => {
+Table.Head = ({ className = "", ...rest }) => {
     return <thead className={cn("ui-table-head", "bg-gray-lighter", className)} {...rest} />;
 };
 
@@ -27,7 +27,7 @@ Table.Head.propTypes = {
     className: PropTypes.string,
 };
 
-Table.Header = ({ className, ...rest }) => {
+Table.Header = ({ className = "", ...rest }) => {
     return <th className={cn("ui-table-header", "px-4 py-2 text-left text-base font-bold", className)} {...rest} />;
 };
 
@@ -36,7 +36,7 @@ Table.Header.propTypes = {
     className: PropTypes.string,
 };
 
-Table.Body = ({ className, isStriped = false, children, ...rest }) => {
+Table.Body = ({ className = "", isStriped = false, children, ...rest }) => {
     return (
         <tbody className={cn("ui-table-body", "border-none", className)} {...rest}>
             {Children.map(children, (child) => child && cloneElement(child, { isStriped }))}
@@ -51,7 +51,7 @@ Table.Body.propTypes = {
     isStriped: PropTypes.bool,
 };
 
-Table.Row = ({ isStriped = false, className, ...rest }) => {
+Table.Row = ({ isStriped = false, className = "", ...rest }) => {
     return <tr className={cn("ui-table-row", isStriped && "even:bg-gray-lighter", className)} {...rest} />;
 };
 
@@ -61,7 +61,7 @@ Table.Row.propTypes = {
     className: PropTypes.string,
 };
 
-Table.Cell = ({ className, ...rest }) => {
+Table.Cell = ({ className = "", ...rest }) => {
     return (
         <td
             className={cn("ui-table-cell", "whitespace-nowrap px-4 py-2 text-base text-gray-darker", className)}

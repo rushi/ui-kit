@@ -3,7 +3,7 @@ import React from "react";
 import cn from "../helpers/classnames";
 import styles from "./Skeleton.module.css";
 
-export const Skeleton = ({ style, height = 300, shouldAnimate = true, children, classNames = {}, ...rest }) => {
+export const Skeleton = ({ style = {}, height = 300, shouldAnimate = true, children, classNames = {}, ...rest }) => {
     return (
         <div
             className={cn(

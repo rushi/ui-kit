@@ -18,13 +18,13 @@ const meta: Meta<typeof Logo> = {
     },
     argTypes: {
         src: {
-            type: { required: true },
+            required: true,
             description: "The URL to the logo",
             control: {
                 type: "text",
             },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "none" },
             },
         },
@@ -33,7 +33,7 @@ const meta: Meta<typeof Logo> = {
             options: ["small", "medium", "large"],
             control: { type: "radio" },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "medium" },
             },
         },

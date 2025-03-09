@@ -7,10 +7,10 @@ import { Avatar } from "../Avatar";
 export const SidebarAccount = ({
     name,
     description,
-    image,
+    image = null,
     icon = <ChevronRightIcon />,
     isResponsive = false,
-    className,
+    className = "",
     ...rest
 }) => {
     const accountImage = image ?? <Avatar size="tiny" name={name} />;

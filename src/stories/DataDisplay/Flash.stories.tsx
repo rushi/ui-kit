@@ -92,13 +92,14 @@ export const AllStyles = (props) => {
 
     return (
         <div className="w-96 space-y-8">
-            {meta.argTypes.color.options.map((color) => {
-                const classes = flash.getStyles(color, props.size, "relative", true);
-                return flash.container(`[${color}] ${props.text}`, classes, props.canClose ? handleClose : null, {
-                    id: `flash-${color}`,
-                    visible: true,
-                });
-            })}
+            {meta &&
+                meta.argTypes?.color?.options.map((color) => {
+                    const classes = flash.getStyles(color, props.size, "relative", true);
+                    return flash.container(`[${color}] ${props.text}`, classes, props.canClose ? handleClose : null, {
+                        id: `flash-${color}`,
+                        visible: true,
+                    });
+                })}
         </div>
     );
 };

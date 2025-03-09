@@ -1,10 +1,10 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { DotProgress } from "../..";
+import { DotProgress as DotProgressComponent } from "../..";
 
-const meta: Meta<typeof DotProgress> = {
+const meta: Meta<typeof DotProgressComponent> = {
     title: "Data Display/DotProgress",
-    component: DotProgress,
+    component: DotProgressComponent,
     parameters: {
         docs: {
             description: {
@@ -18,12 +18,12 @@ const meta: Meta<typeof DotProgress> = {
     },
     argTypes: {
         current: {
-            type: { required: true },
+            required: true,
             description: "The current position. Starts at 0",
             control: { type: "number" },
         },
         total: {
-            type: { required: true },
+            required: true,
             description: "The total count in progress",
             control: { type: "number" },
         },
@@ -31,12 +31,12 @@ const meta: Meta<typeof DotProgress> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DotProgress>;
+type Story = StoryObj<typeof DotProgressComponent>;
 
-export const Default = ({ current, total }) => {
+export const DotProgress = ({ current, total }) => {
     return (
         <div>
-            <DotProgress current={current} total={total} />
+            <DotProgressComponent current={current} total={total} />
         </div>
     );
 };

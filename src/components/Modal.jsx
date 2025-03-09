@@ -59,7 +59,7 @@ export const Modal = ({
     shouldCloseOnOutsideClick = false,
     onClose,
     children,
-    className,
+    className = "",
 }) => {
     const handleOutsideClick = () => {
         if (shouldCloseOnOutsideClick) {
@@ -136,7 +136,7 @@ Modal.propTypes = {
     className: PropTypes.string,
 };
 
-const Header = ({ children, description, className, ...rest }) => {
+const Header = ({ children, description, className = "", ...rest }) => {
     return (
         <Dialog.Title as="div" className={cn(className, "ui-modal-header text-center")} {...rest}>
             <h3 className="text-2xl font-semibold leading-6 text-black">{children}</h3>
@@ -157,7 +157,7 @@ Header.propTypes = {
 Header.displayName = "Modal.Header";
 Modal.Header = Header;
 
-const Body = ({ className, ...rest }) => {
+const Body = ({ className = "", ...rest }) => {
     return <div className={cn(className, "ui-modal-body mt-10")} {...rest} />;
 };
 
@@ -168,7 +168,7 @@ Body.propTypes = {
 Body.displayName = "Modal.Body";
 Modal.Body = Body;
 
-const Footer = ({ className, ...rest }) => {
+const Footer = ({ className = "", ...rest }) => {
     return <div className={cn(className, "ui-modal-footer mt-10 space-x-4 text-right")} {...rest} />;
 };
 

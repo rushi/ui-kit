@@ -13,14 +13,15 @@ const meta: Meta<typeof Currency> = {
         },
     },
     args: {
-        amount: 109_482.84,
+        children: 109_482.84,
         locale: "en-US",
-        removeTrailingZeroes: true,
+        shouldRemoveTrailingZeroes: true,
+        isNarrowSymbolForm: false,
     },
     argTypes: {
-        amount: {
+        children: {
             description: "A number",
-            type: { required: true },
+            required: true,
             control: { type: "number" },
             table: {
                 type: { summary: "For demo only" },
@@ -28,30 +29,38 @@ const meta: Meta<typeof Currency> = {
         },
         locale: {
             description: "A locale string",
-            type: { required: true },
+            required: true,
             control: { type: "select" },
             options: ["en-IN", "en-US", "fr-FR", "ja-JP", "de-DE", "ar-AE", "en-CA", "fr-CA"],
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "Auto-detected based on browser settings" },
             },
         },
         currency: {
-            description: "Three characater currency code",
-            type: { required: true },
+            description: "Three character currency code",
+            required: true,
             control: { type: "select" },
             options: ["USD", "GBP", "EUR", "JPY", "INR", "AED"],
             table: {
-                type: { summary: null },
-                defaultValue: { summary: null },
+                type: { summary: undefined },
+                defaultValue: { summary: undefined },
             },
         },
-        removeTrailingZeroes: {
+        shouldRemoveTrailingZeroes: {
             description: "Strip trailing `.00`",
             control: { type: "boolean" },
             table: {
-                type: { summary: null },
-                defaultValue: { summary: true },
+                type: { summary: undefined },
+                defaultValue: { summary: "true" },
+            },
+        },
+        isNarrowSymbolForm: {
+            description: "Shorter form of the currency",
+            control: { type: "boolean" },
+            table: {
+                type: { summary: undefined },
+                defaultValue: { summary: "false" },
             },
         },
     },
@@ -60,7 +69,7 @@ const meta: Meta<typeof Currency> = {
 export default meta;
 type Story = StoryObj<typeof Currency>;
 
-export const Default = ({ currency, locale, removeTrailingZeroes, amount }) => {
+export const Default = ({ currency, locale, shouldRemoveTrailingZeroes, amount, ...rest }) => {
     return (
         <div>
             <div className="mb-2">
@@ -70,14 +79,19 @@ export const Default = ({ currency, locale, removeTrailingZeroes, amount }) => {
                 </a>{" "}
                 API
             </div>
-            <Currency currency={currency} locale={locale} removeTrailingZeroes={removeTrailingZeroes}>
+            <Currency
+                {...rest}
+                currency={currency}
+                locale={locale}
+                shouldRemoveTrailingZeroes={shouldRemoveTrailingZeroes}
+            >
                 {amount}
             </Currency>
         </div>
     );
 };
 
-export const AllCurrencies = ({ amount, locale }) => {
+export const AllCurrencies = ({ amount, locale, ...rest }) => {
     const currencies = ["EUR", "GBP", "INR", "AUD", "CAD", "NZD", "MXN", "JPY", "AED"];
     return (
         <div className="flex flex-col space-y-2">
@@ -87,7 +101,7 @@ export const AllCurrencies = ({ amount, locale }) => {
                 return (
                     <span className="flex space-x-4">
                         <span>{currency}</span>
-                        <Currency locale={locale} currency={currency}>
+                        <Currency {...rest} locale={locale} currency={currency}>
                             {amount}
                         </Currency>
                     </span>

@@ -9,7 +9,7 @@ import cn from "../../helpers/classnames";
 import styles from "./Popover.module.css";
 import scrollFix from "./PopoverScroll.module.css";
 
-export const Popover = ({ isLazy = true, skidding = 0, distance = 10, className, children, ...rest }) => {
+export const Popover = ({ isLazy = true, skidding = 0, distance = 10, className = "", children, ...rest }) => {
     const content = getChildrenByType(children, Popover.Content);
     const target = Children.toArray(children).filter((child) => child.type !== Popover.Content);
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { ToggleButton } from "../../";
+import { ToggleButton as ToggleButtonComponent } from "../../";
 import { CheckIcon } from "../../icons/index.js";
 
 const ToggleButtonStories = {
     title: "Forms & Fields/Buttons/ToggleButton",
-    component: ToggleButton,
+    component: ToggleButtonComponent,
     args: {
         color: "success",
         size: "medium",
@@ -41,7 +41,7 @@ const ToggleButtonStories = {
     },
 };
 
-export const Default = ({ size, isActive }) => {
+export const ToggleButton = ({ size, isActive }) => {
     const [active, setActive] = useState(isActive);
     return (
         <div className="space-y-2">
@@ -49,7 +49,8 @@ export const Default = ({ size, isActive }) => {
             <div className="flex gap-x-4">
                 {["primary", "secondary", "success", "warning", "caution", "danger"].map((color) => {
                     return (
-                        <ToggleButton
+                        <ToggleButtonComponent
+                            key={color}
                             color={color}
                             size={size}
                             isActive={active}
@@ -57,7 +58,7 @@ export const Default = ({ size, isActive }) => {
                             onClick={() => setActive(!active)}
                         >
                             <CheckIcon className={`text-${color}`} />
-                        </ToggleButton>
+                        </ToggleButtonComponent>
                     );
                 })}
             </div>

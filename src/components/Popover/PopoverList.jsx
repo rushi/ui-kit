@@ -4,7 +4,7 @@ import cn from "../../helpers/classnames";
 import { Popover } from "./Popover";
 import scrollFix from "./PopoverScroll.module.css";
 
-export const PopoverList = ({ placement = "bottom", className, children, ...rest }) => {
+export const PopoverList = ({ placement = "bottom", className = "", children, ...rest }) => {
     const childrenArray = Children.toArray(children);
     const innerContent = childrenArray.filter((child) => child.type !== PopoverList.Item);
     const totalItems = childrenArray.length - innerContent.length;
@@ -33,7 +33,17 @@ PopoverList.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-const Item = ({ name, isActive = false, id = null, position, total, children, className, onClickItem, ...rest }) => {
+const Item = ({
+    name,
+    isActive = false,
+    id = null,
+    position,
+    total,
+    children,
+    className = "",
+    onClickItem,
+    ...rest
+}) => {
     const onClick = (event) => onClickItem(event, name, id);
 
     return (

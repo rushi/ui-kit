@@ -3,11 +3,11 @@ import React, { useId } from "react";
 import cn from "../../helpers/classnames";
 import styles from "./Checkbox.module.css";
 
-export const Checkbox = ({ label, className, classNames = {}, ...rest }) => {
+export const Checkbox = ({ label, className = "", classNames = {}, ...rest }) => {
     const id = useId("checkbox");
 
     return (
-        <div className={cn("ui-checkbox", className, "flex items-center")}>
+        <div className={cn("ui-checkbox", (className = ""), "flex items-center")}>
             <input
                 type="checkbox"
                 className={cn(

@@ -7,7 +7,7 @@ import { ChevronRightIcon } from "../../icons/src/ChevronRightIcon";
 /**
  * Render the custom left & right arrows to change the current month.
  */
-export const NavbarElement = ({ onPreviousClick, onNextClick, className, showNextButton, showPreviousButton }) => {
+export const NavbarElement = ({ onPreviousClick, onNextClick, className = "", showNextButton, showPreviousButton }) => {
     return (
         <div className={cn("absolute right-1 top-1.5 z-50", className)}>
             <ChevronButton isVisible={showPreviousButton} onClick={onPreviousClick}>

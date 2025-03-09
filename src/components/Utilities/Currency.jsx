@@ -12,7 +12,7 @@ export const Currency = ({
     shouldRemoveTrailingZeroes = true,
     maximumFractionDigits = 2,
     compact = false,
-    isNarrowSymbolForm,
+    isNarrowSymbolForm = false,
     children,
 }) => {
     let amount = children;

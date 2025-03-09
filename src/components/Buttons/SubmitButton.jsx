@@ -22,7 +22,7 @@ export const SubmitButton = ({
     disabled = false,
     variant = "standard",
     type = "submit",
-    className,
+    className = "",
     children,
     ...rest
 }) => {

@@ -1,5 +1,5 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 import { Phone } from "../..";
 
 const meta: Meta<typeof Phone> = {
@@ -13,25 +13,25 @@ const meta: Meta<typeof Phone> = {
         },
     },
     args: {
-        number: "5402322157",
+        children: "5402322157",
         countryCode: "US",
     },
     argTypes: {
-        number: {
+        children: {
             description: "A phone number",
-            type: { required: true },
+            required: true,
             control: { type: "text" },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
             },
         },
         countryCode: {
             description:
                 "The country of the code seller to display the number in the seller country's format. This is available in `seller.countryCode`",
-            type: { required: false },
+            required: false,
             control: { type: "text" },
             table: {
-                type: { summary: null },
+                type: { summary: undefined },
                 defaultValue: { summary: "US" },
             },
         },
@@ -51,21 +51,29 @@ export const InvalidNumbers = () => {
     return (
         <div className="space-y-4">
             {invalidNumbers.map((number) => {
-                return <PhoneDisplay key={number} countryCode="US" number={number} />;
+                return (
+                    <PhoneDisplay key={number} countryCode="US">
+                        {number}
+                    </PhoneDisplay>
+                );
             })}
         </div>
     );
 };
 
 export const WithCountryCode = () => {
-    return <PhoneDisplay countryCode="GB" number="7576060661" />;
+    return <PhoneDisplay countryCode="GB">7576060661</PhoneDisplay>;
 };
 
 export const USCountryAndIntlNumber = () => {
     return (
         <span className="space-y-4">
             {["+919538057572", "9538057572", "612745471", "+16475368727"].map((number) => {
-                return <PhoneDisplay key={number} countryCode="US" number={number} />;
+                return (
+                    <PhoneDisplay key={number} countryCode="US">
+                        {number}
+                    </PhoneDisplay>
+                );
             })}
         </span>
     );
@@ -124,7 +132,9 @@ export const SellerPhoneNumbers = () => {
             <div className="grid grid-cols-3 gap-6">
                 {Object.keys(list).map((countryCode) => {
                     return (
-                        <PhoneDisplay key={list[countryCode]} countryCode={countryCode} number={list[countryCode]} />
+                        <PhoneDisplay key={list[countryCode]} countryCode={countryCode}>
+                            {list[countryCode]}
+                        </PhoneDisplay>
                     );
                 })}
             </div>
@@ -132,7 +142,7 @@ export const SellerPhoneNumbers = () => {
     );
 };
 
-const PhoneDisplay = ({ countryCode, number }) => {
+const PhoneDisplay = ({ countryCode, children }) => {
     return (
         <div className="space-y-2">
             <div>
@@ -142,14 +152,14 @@ const PhoneDisplay = ({ countryCode, number }) => {
 
             <div>
                 <span className="mr-2 inline-block w-20 text-right">Original:</span>
-                <span className="font-mono">{number}</span>
+                <span className="font-mono">{children}</span>
             </div>
 
             <div>
                 <span className="mr-2 inline-block w-20 text-right">Formatted:</span>
 
                 <Phone className="font-mono" countryCode={countryCode.slice(0, 2)}>
-                    {number}
+                    {children}
                 </Phone>
             </div>
         </div>

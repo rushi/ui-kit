@@ -20,12 +20,12 @@ const meta: Meta<typeof Drawer> = {
     argTypes: {
         isOpen: {
             description: "Open or close the sidebar",
-            type: { required: true },
+            required: true,
             control: { type: "boolean" },
         },
         title: {
             description: "The title of the Drawer",
-            type: { required: true },
+            required: true,
             control: { type: "text" },
         },
         content: {

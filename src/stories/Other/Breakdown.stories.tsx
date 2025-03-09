@@ -1,11 +1,11 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { CardIcon } from "../../icons/index.js";
-import { Breakdown, Button } from "../../";
+import { Breakdown as BreakdownComponent, Button } from "../../";
 
-const meta: Meta<typeof Breakdown> = {
+const meta: Meta<typeof BreakdownComponent> = {
     title: "Other/Breakdown",
-    component: Breakdown,
+    component: BreakdownComponent,
     parameters: {
         design: {
             name: "Figma",
@@ -16,67 +16,82 @@ const meta: Meta<typeof Breakdown> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Breakdown>;
+type Story = StoryObj<typeof BreakdownComponent>;
 
-export const Default = () => {
+export const Breakdown = () => {
     // Just for a basic showcase of when info is null
     const EmptyComponent = () => null;
 
     return (
         <div className="w-80 bg-gray-lighter p-4">
-            <Breakdown currency="USD">
-                <Breakdown.Item value={100}>Line item caption</Breakdown.Item>
-                <Breakdown.Item value={29} secondary="($29.00 x 1)">
+            <BreakdownComponent currency="USD">
+                <BreakdownComponent.Item value={100}>Line item caption</BreakdownComponent.Item>
+                <BreakdownComponent.Item value={29} secondary="($29.00 x 1)">
                     Children
-                </Breakdown.Item>
-                <Breakdown.Item value={29} secondary="($29.00 x 1)">
+                </BreakdownComponent.Item>
+                <BreakdownComponent.Item value={29} secondary="($29.00 x 1)">
                     Adults
-                </Breakdown.Item>
-                <Breakdown.Item value={29} methodIcon={<EmptyComponent />} info={<EmptyComponent />}>
+                </BreakdownComponent.Item>
+                <BreakdownComponent.Item value={29} methodIcon={<EmptyComponent />} info={<EmptyComponent />}>
                     Null Info
-                </Breakdown.Item>
-                <Breakdown.Item value={4} secondary="($2.00 x 2)">
+                </BreakdownComponent.Item>
+                <BreakdownComponent.Item value={4} secondary="($2.00 x 2)">
                     VAT
-                </Breakdown.Item>
+                </BreakdownComponent.Item>
 
-                <Breakdown.Separator />
+                <BreakdownComponent.Separator />
 
-                <Breakdown.SubtotalItem info="Total" value={162}>
+                <BreakdownComponent.SubtotalItem info="Total" value={162}>
                     <Button color="secondary" variant="outline" size="small">
                         Modify
                     </Button>
-                </Breakdown.SubtotalItem>
+                </BreakdownComponent.SubtotalItem>
 
-                <Breakdown.Item value={1230} secondary="12/18/2019" info="*0259" methodIcon={<CardIcon />}>
+                <BreakdownComponent.Item value={1230} secondary="12/18/2019" info="*0259" methodIcon={<CardIcon />}>
                     Payment
-                </Breakdown.Item>
+                </BreakdownComponent.Item>
 
-                <Breakdown.Item color="primary" secondary="07/23/2021" value={-62} methodIcon={<CardIcon />}>
+                <BreakdownComponent.Item color="primary" secondary="07/23/2021" value={-62} methodIcon={<CardIcon />}>
                     Return Payment
-                </Breakdown.Item>
+                </BreakdownComponent.Item>
 
-                <Breakdown.Item secondary="07/23/2021" info={<EmptyComponent />} value={0} methodIcon={<CardIcon />}>
+                <BreakdownComponent.Item
+                    secondary="07/23/2021"
+                    info={<EmptyComponent />}
+                    value={0}
+                    methodIcon={<CardIcon />}
+                >
                     This is a really long message that should wrap somehow
-                </Breakdown.Item>
+                </BreakdownComponent.Item>
 
-                <Breakdown.Item secondary="07/23/2021" info={<EmptyComponent />} value={0} methodIcon={<CardIcon />}>
+                <BreakdownComponent.Item
+                    secondary="07/23/2021"
+                    info={<EmptyComponent />}
+                    value={0}
+                    methodIcon={<CardIcon />}
+                >
                     LongMessageThat ShouldOnlyBreakAt AWhitespaceLoremIpsum
-                </Breakdown.Item>
+                </BreakdownComponent.Item>
 
-                <Breakdown.Item secondary="07/23/2021" info={<EmptyComponent />} value={0} methodIcon={<CardIcon />}>
+                <BreakdownComponent.Item
+                    secondary="07/23/2021"
+                    info={<EmptyComponent />}
+                    value={0}
+                    methodIcon={<CardIcon />}
+                >
                     SmallMessage LongMessageThatShouldOnlyBreakAtAWhitespaceLoremIpsum
-                </Breakdown.Item>
+                </BreakdownComponent.Item>
 
-                <Breakdown.Separator />
+                <BreakdownComponent.Separator />
 
-                <Breakdown.SubtotalItem info="Paid" value={62}>
+                <BreakdownComponent.SubtotalItem info="Paid" value={62}>
                     <Button color="secondary" variant="outline" size="small">
                         Apply Code
                     </Button>
-                </Breakdown.SubtotalItem>
+                </BreakdownComponent.SubtotalItem>
 
-                <Breakdown.SubtotalItem info="Balance" color="danger" value={62} />
-            </Breakdown>
+                <BreakdownComponent.SubtotalItem info="Balance" color="danger" value={62} />
+            </BreakdownComponent>
         </div>
     );
 };

@@ -11,7 +11,7 @@ const sizes = {
 };
 
 export const BaseInput = forwardRef(
-    ({ as: Tag, size = "medium", isError, className, isRequired, value, prefix, suffix, ...rest }, ref) => {
+    ({ as: Tag, size = "medium", isError, className = "", isRequired, value, prefix, suffix, ...rest }, ref) => {
         const stringValue = () => {
             if (!isString(value)) return undefined;
 

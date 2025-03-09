@@ -17,7 +17,7 @@ const colors = {
 
 const CurrencyContext = createContext();
 
-export const Breakdown = ({ children, className, currency, locale, ...rest }) => {
+export const Breakdown = ({ children, className = "", currency, locale, ...rest }) => {
     const value = useMemo(() => ({ currency, locale }), [currency, locale]);
     return (
         <CurrencyContext.Provider value={value}>
@@ -41,7 +41,7 @@ const BreakdownItem = ({
     secondary,
     value,
     color = "default",
-    className,
+    className = "",
     classNames = { key: "", children: "", info: "", value: "" },
     children,
     ...rest
@@ -93,7 +93,7 @@ const BreakdownSubtotalItem = ({
     info,
     value,
     color = "black",
-    className,
+    className = "",
     classNames = { children: "", info: "", value: "" },
     children,
     ...rest
@@ -126,7 +126,7 @@ BreakdownSubtotalItem.propTypes = {
 Breakdown.SubtotalItem = BreakdownSubtotalItem;
 Breakdown.SubtotalItem.displayName = "Breakdown.SubtotalItem";
 
-const BreakdownSeparator = ({ className, ...rest }) => {
+const BreakdownSeparator = ({ className = "", ...rest }) => {
     return (
         <tr className={cn("ui-breakdown-separator", className)} {...rest}>
             <td colSpan={3} className="border-b border-gray-light pb-1" />

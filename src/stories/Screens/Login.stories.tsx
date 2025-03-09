@@ -32,7 +32,7 @@ const meta: Meta<typeof Login> = {
             control: { type: "text" },
         },
         passwordResetUrl: {
-            type: { required: true },
+            required: true,
             control: { type: "text" },
         },
     },
