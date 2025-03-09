@@ -34,8 +34,10 @@
     "./style.css": "./build/style.css"
   },
   "scripts": {
+    "prepare": "npx vite build",
+    "build": "npx vite build",
+    "ci": "npx vite build",
     "dev": "storybook dev -p 6006 --no-open",
-    "ci": "npm run build",
     "clean": "rm -rf node_modules/.vite",
     "lint": "xola-lint src",
     "lint:fix": "xola-lint src --fix",
