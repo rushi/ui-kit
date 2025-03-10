@@ -1,5 +1,4 @@
 import path from "path";
-import copy from "rollup-plugin-copy";
 import { defineConfig } from "vite";
 import pkg from "./package.json";
 
@@ -24,17 +23,6 @@ export default defineConfig({
         rollupOptions: {
             // Make sure none of the dependencies are bundled.
             external: [...dependencies, ...devDependencies],
-            // plugins: [
-            //     copy({
-            //         hook: "writeBundle",
-            //         targets: [
-            //             { src: "theme.css", dest: "build", rename: "ui-kit-theme.css" },
-            //             { src: "index.d.ts", dest: "build" },
-            //             { src: "tailwind.config.js", dest: "build" },
-            //             { src: "postcss.config.js", dest: "build" }
-            //         ],
-            //     }),
-            // ],
             output: {
                 assetFileNames: (asset) => {
                     if (asset.names?.includes("style.css")) {
