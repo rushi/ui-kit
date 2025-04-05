@@ -31,6 +31,7 @@ function Tooltip({
     offset = [2],
     placement = "right",
     delay = 1,
+    triggerProps = {},
     ...options
 }) {
     const sideOffset = options.skidding ?? offset[0];
@@ -46,7 +47,7 @@ function Tooltip({
     return (
         <TooltipProvider>
             <TooltipBase delayDuration={delay}>
-                <TooltipTrigger>{children}</TooltipTrigger>
+                <TooltipTrigger asChild {...triggerProps}>{children}</TooltipTrigger>
                 <TooltipContent
                     side={placement}
                     sideOffset={sideOffset}
