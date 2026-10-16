@@ -9,6 +9,10 @@ const packages = [...Object.keys(pkg.dependencies), ...Object.keys(pkg.devDepend
 const isExternal = (id) => !id.endsWith(".css") && packages.some((name) => id === name || id.startsWith(`${name}/`));
 
 export default defineConfig({
+    // Consumers installing from git build this via `prepare`, where NODE_ENV may not be "production".
+    // Vite would then emit jsxDEV calls, which crash against React's production jsx-dev-runtime.
+    esbuild: { jsxDev: false },
+
     build: {
         outDir: "build",
 
