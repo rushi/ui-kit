@@ -1,10 +1,12 @@
 {
     "name": "@xola/ui-kit",
-    "version": "3.6.0",
+    "version": "3.7.0",
     "description": "Xola UI Kit",
     "license": "MIT",
     "type": "module",
-    "sideEffects": ["**/*.css"],
+    "sideEffects": [
+        "**/*.css"
+    ],
     "repository": {
         "type": "git",
         "url": "git://github.com/xola/ui-kit.git"
@@ -21,7 +23,10 @@
     "module": "build/index.js",
     "types": "build/index.d.ts",
     "exports": {
-        ".": { "types": "./build/index.d.ts", "import": "./build/index.js" },
+        ".": {
+            "types": "./build/index.d.ts",
+            "import": "./build/index.js"
+        },
         "./index.css": "./index.css",
         "./build/*": "./build/*",
         "./tailwind.config": "./tailwind.config.js",
@@ -107,12 +112,24 @@
         "vite": "^5.4.11 || ^6.0.0 || ^7.0.0"
     },
     "peerDependenciesMeta": {
-        "@types/react": { "optional": true },
-        "@types/react-dom": { "optional": true },
-        "autoprefixer": { "optional": true },
-        "postcss": { "optional": true },
-        "tailwindcss": { "optional": true },
-        "vite": { "optional": true }
+        "@types/react": {
+            "optional": true
+        },
+        "@types/react-dom": {
+            "optional": true
+        },
+        "autoprefixer": {
+            "optional": true
+        },
+        "postcss": {
+            "optional": true
+        },
+        "tailwindcss": {
+            "optional": true
+        },
+        "vite": {
+            "optional": true
+        }
     },
     "engines": {
         "node": ">=20"
